@@ -1,0 +1,187 @@
+/* Color Palette Variables */
+:root {
+    --bg-dark: #050505;
+    /* This creates the dark gradient background */
+    --bg-gradient: linear-gradient(135deg, #050505 0%, #1a0b2e 50%, #000000 100%);
+    --primary-purple: #a855f7;
+    --accent-yellow: #fbbf24;
+    --text-light: #f3f4f6;
+    --text-muted: #9ca3af;
+    --card-bg: rgba(255, 255, 255, 0.03);
+    --nav-bg: rgba(5, 5, 5, 0.85);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', system-ui, sans-serif;
+}
+
+html {
+    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+}
+
+body {
+    background: var(--bg-gradient);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+/* --- Sticky Navbar --- */
+.navbar {
+    position: sticky;
+    top: 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.5rem 8%;
+    background: var(--nav-bg);
+    backdrop-filter: blur(12px); /* Creates the frosted glass effect */
+    z-index: 1000;
+    border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--text-light);
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 2.5rem;
+}
+
+.nav-links a {
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--accent-yellow);
+}
+
+/* --- General Layout --- */
+section {
+    min-height: 100vh;
+    padding: 8rem 8% 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- Hero Section --- */
+.greeting {
+    color: var(--primary-purple);
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.hero h1 {
+    font-size: 4.5rem;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.subtitle {
+    font-size: 2rem;
+    font-weight: 400;
+    margin-bottom: 1.5rem;
+}
+
+.highlight-purple { color: var(--primary-purple); }
+.highlight-yellow { color: var(--accent-yellow); }
+
+.description {
+    color: var(--text-muted);
+    max-width: 500px;
+    margin-bottom: 2.5rem;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: transparent;
+    color: var(--accent-yellow);
+    border: 2px solid var(--accent-yellow);
+    border-radius: 30px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--accent-yellow);
+    color: var(--bg-dark);
+    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+}
+
+/* --- Projects Section --- */
+.section-title {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: var(--text-light);
+}
+
+.project-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+}
+
+.project-card {
+    background: var(--card-bg);
+    padding: 2.5rem 2rem;
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    transition: transform 0.4s ease, border-color 0.4s ease;
+}
+
+.project-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary-purple);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
+}
+
+.card-icon {
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+}
+
+.project-card h3 {
+    margin-bottom: 1rem;
+    color: var(--text-light);
+}
+
+.project-card p {
+    color: var(--text-muted);
+    margin-bottom: 1.5rem;
+    font-size: 0.95rem;
+}
+
+.card-link {
+    color: var(--primary-purple);
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.card-link:hover {
+    color: var(--accent-yellow);
+}
+
+/* --- Animation Classes --- */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.appear {
+    opacity: 1;
+    transform: translateY(0);
+}
