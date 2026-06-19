@@ -8,7 +8,6 @@
 </head>
 <body>
 
-    <!-- Sticky Navigation -->
     <nav class="navbar">
         <div class="logo">Chelaka B.</div>
         <ul class="nav-links">
@@ -21,44 +20,81 @@
 
     <!-- Hero Section -->
     <section id="home" class="hero fade-in">
-        <div class="hero-content">
-            <p class="greeting">Hello, I'm</p>
-            <h1>Chelaka Botheju</h1>
-            <h2 class="subtitle"><span class="highlight-purple">Undergraduate</span> & <span class="highlight-yellow">Graphic Designer</span></h2>
-            <p class="description">Showcasing my academic journey and creative visual design projects.</p>
-            <a href="#projects" class="btn">Explore My Work</a>
+        <div class="hero-container">
+            <div class="hero-text">
+                <p class="greeting">Hello, I'm</p>
+                <h1>Chelaka Botheju</h1>
+                <h2 class="subtitle"><span class="highlight-purple">Undergraduate</span> & <span class="highlight-yellow">Graphic Designer</span></h2>
+                <p class="description">Showcasing my academic journey and creative visual design projects.</p>
+                <a href="#projects" class="btn">Explore My Work</a>
+            </div>
+            <div class="hero-image">
+                <img src="profile.png.png" alt="Chelaka Botheju" class="profile-pic">
+            </div>
         </div>
     </section>
 
-    <!-- Projects Section -->
+    <section id="about" class="fade-in">
+        <h2 class="section-title">About Me</h2>
+        <div class="about-content">
+            <div class="about-text">
+                <h3>Personal Info & Education</h3>
+                <p>I am an undergraduate student with a passion for blending technical skills with creative visual design. I specialize in creating impactful graphics and continuously expanding my software development knowledge.</p>
+                <ul class="education-list">
+                    <li><strong>Undergraduate Degree:</strong> [Your University Name], [Year]</li>
+                    <li><strong>Location:</strong> Colombo, Sri Lanka</li>
+                </ul>
+            </div>
+            <div class="skills-container">
+                <h3>Core Skills</h3>
+                <div class="skill-tags">
+                    <span class="skill-tag">Graphic Design</span>
+                    <span class="skill-tag">UI/UX Design</span>
+                    <span class="skill-tag">HTML & CSS</span>
+                    <span class="skill-tag">JavaScript</span>
+                    <span class="skill-tag">Git & GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <section id="projects" class="fade-in">
         <h2 class="section-title">Featured Projects</h2>
         <div class="project-grid">
             
-            <!-- Project Card 1 -->
             <div class="project-card">
-                <div class="card-icon">📁</div>
+                <div class="card-image-placeholder">Image 1</div>
                 <h3>Project 1</h3>
-                <p>A brief description of this project, the tools used, and the problem it solved.</p>
+                <p>A brief description of this project, the tools used, and the visual problem it solved.</p>
                 <a href="#" class="card-link">View Details →</a>
             </div>
 
-            <!-- Project Card 2 -->
             <div class="project-card">
-                <div class="card-icon">📁</div>
+                <div class="card-image-placeholder">Image 2</div>
                 <h3>Project 2</h3>
-                <p>A brief description of this project, the tools used, and the problem it solved.</p>
+                <p>A brief description of this project, the tools used, and the visual problem it solved.</p>
                 <a href="#" class="card-link">View Gallery →</a>
             </div>
 
-            <!-- Project Card 3 -->
             <div class="project-card">
-                <div class="card-icon">📁</div>
+                <div class="card-image-placeholder">Image 3</div>
                 <h3>Project 3</h3>
-                <p>A brief description of this project, the tools used, and the problem it solved.</p>
-                <a href="#" class="card-link">Read Report →</a>
+                <p>A brief description of this project, the tools used, and the visual problem it solved.</p>
+                <a href="#" class="card-link">View Project →</a>
             </div>
 
+        </div>
+    </section>
+
+    <section id="contact" class="fade-in">
+        <h2 class="section-title">Get In Touch</h2>
+        <div class="contact-container">
+            <form class="contact-form">
+                <input type="text" placeholder="Your Name" required>
+                <input type="email" placeholder="Your Email" required>
+                <textarea placeholder="Your Message" rows="5" required></textarea>
+                <button type="submit" class="btn">Send Message</button>
+            </form>
         </div>
     </section>
 

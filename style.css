@@ -75,6 +75,40 @@ section {
 }
 
 /* --- Hero Section --- */
+.hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    width: 100%;
+}
+
+.hero-text {
+    flex: 1;
+}
+
+.hero-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-pic {
+    width: 350px;
+    height: 350px;
+    object-fit: cover;
+    border-radius: 50%; /* Makes the image a perfect circle */
+    border: 4px solid var(--primary-purple);
+    box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); /* Purple glow effect */
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.profile-pic:hover {
+    transform: scale(1.02);
+    box-shadow: 0 0 40px rgba(251, 191, 36, 0.4); /* Changes to yellow glow on hover */
+}
+
 .greeting {
     color: var(--primary-purple);
     font-size: 1.2rem;
@@ -184,4 +218,126 @@ section {
 .fade-in.appear {
     opacity: 1;
     transform: translateY(0);
+}
+/* --- About Section --- */
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+}
+
+.about-text h3, .skills-container h3 {
+    color: var(--accent-yellow);
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.education-list {
+    margin-top: 1.5rem;
+    list-style-type: none;
+    color: var(--text-muted);
+}
+
+.education-list li {
+    margin-bottom: 0.5rem;
+}
+
+.education-list strong {
+    color: var(--text-light);
+}
+
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+}
+
+.skill-tag {
+    background: rgba(168, 85, 247, 0.1);
+    color: var(--primary-purple);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid rgba(168, 85, 247, 0.3);
+    font-size: 0.9rem;
+    font-weight: 600;
+}
+
+/* --- Project Images --- */
+.card-image-placeholder {
+    width: 100%;
+    height: 200px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 8px;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-muted);
+    border: 1px dashed var(--primary-purple);
+}
+
+/* --- Contact Section --- */
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 8px;
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--accent-yellow);
+}
+
+.contact-form button {
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+/* --- Responsive Design (Mobile) --- */
+@media (max-width: 768px) {
+    .hero-container {
+        flex-direction: column-reverse; /* Puts image above text on mobile */
+        text-align: center;
+        margin-top: 2rem;
+    }
+    
+    .description {
+        margin: 0 auto 2.5rem auto; /* Centers the description text */
+    }
+
+    .profile-pic {
+        width: 250px;
+        height: 250px;
+        margin-bottom: 2rem;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    .nav-links {
+        display: none; 
+    }
+    .hero h1 {
+        font-size: 3rem;
+    }
 }
