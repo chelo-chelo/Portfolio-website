@@ -341,3 +341,151 @@ section {
         font-size: 3rem;
     }
 }
+
+/* Skills */
+
+.bar{
+    height:10px;
+    background:#333;
+    border-radius:10px;
+    overflow:hidden;
+    margin-bottom:20px;
+}
+
+.fill{
+    height:100%;
+    background:var(--primary-purple);
+}
+
+.html{
+    width:90%;
+}
+
+.css{
+    width:85%;
+}
+
+.design{
+    width:95%;
+}
+
+/* Timeline */
+
+.timeline{
+    border-left:3px solid var(--primary-purple);
+    padding-left:30px;
+}
+
+.timeline-item{
+    margin-bottom:30px;
+}
+
+/* Theme Button */
+
+#theme-btn{
+    padding:10px;
+    border:none;
+    background:none;
+    color:white;
+    font-size:20px;
+    cursor:pointer;
+}
+
+/* Footer */
+
+footer{
+    text-align:center;
+    padding:30px;
+    color:var(--text-muted);
+}
+/* =============================
+   Scroll Progress Bar
+============================= */
+
+#progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+
+    width: 0%;
+    height: 5px;
+
+    background: var(--accent-yellow);
+
+    z-index: 9999;
+}
+
+
+/* =============================
+   Light Theme
+============================= */
+
+.light-theme {
+
+    --bg-dark: #ffffff;
+
+    --bg-gradient: linear-gradient(
+        135deg,
+        #ffffff,
+        #f5f5f5
+    );
+
+    --text-light: #111111;
+
+    --text-muted: #555555;
+
+    --card-bg: rgba(
+        0,
+        0,
+        0,
+        0.05
+    );
+
+    --nav-bg: rgba(
+        255,
+        255,
+        255,
+        0.9
+    );
+}
+
+
+/* =============================
+   Theme Button
+============================= */
+
+#theme-btn {
+
+    background: none;
+    border: none;
+
+    color: var(--text-light);
+
+    font-size: 1.2rem;
+
+    cursor: pointer;
+
+    transition: transform 0.3s ease;
+
+}
+
+#theme-btn:hover {
+
+    transform: scale(1.2);
+
+}
+
+
+/* =============================
+   Typing Text
+============================= */
+
+.typing {
+
+    color: var(--primary-purple);
+
+    font-size: 2rem;
+
+    font-weight: bold;
+
+}

@@ -7,15 +7,20 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div id="progress-bar"></div>
 
     <nav class="navbar">
-        <div class="logo">Chelaka B.</div>
+        <div class="logo">W T N C Botheju</div>
+
         <ul class="nav-links">
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#contact">Contact</a></li>
         </ul>
+
+        <button id="theme-btn">🌙</button>
     </nav>
 
     <!-- Hero Section -->
@@ -24,7 +29,9 @@
             <div class="hero-text">
                 <p class="greeting">Hello, I'm</p>
                 <h1>Chelaka Botheju</h1>
-                <h2 class="subtitle"><span class="highlight-purple">Undergraduate</span> & <span class="highlight-yellow">Graphic Designer</span></h2>
+                <h2 class="subtitle">
+                    <span class="typing"></span>
+                </h2>
                 <p class="description">Showcasing my academic journey and creative visual design projects.</p>
                 <a href="#projects" class="btn">Explore My Work</a>
             </div>
@@ -47,15 +54,69 @@
             </div>
             <div class="skills-container">
                 <h3>Core Skills</h3>
-                <div class="skill-tags">
-                    <span class="skill-tag">Graphic Design</span>
-                    <span class="skill-tag">UI/UX Design</span>
-                    <span class="skill-tag">HTML & CSS</span>
-                    <span class="skill-tag">JavaScript</span>
-                    <span class="skill-tag">Git & GitHub</span>
+
+                <div class="skill">
+
+                    <p>HTML</p>
+                    <div class="bar">
+                    <div class="fill html"></div>
+                    </div>
+
+                </div>
+
+                <div class="skill">
+
+                    <p>CSS</p>
+                    <div class="bar">
+                    <div class="fill css"></div>
+                    </div>
+
+                </div>
+
+                <div class="skill">
+
+                    <p>Graphic Design</p>
+                    <div class="bar">
+                    <div class="fill design"></div>
+                    </div>
+
+                </div>
+
                 </div>
             </div>
         </div>
+    </section>
+
+    <section id="education">
+
+        <h2 class="section-title">
+        Education
+        </h2>
+
+        <div class="timeline">
+
+            <div class="timeline-item">
+
+                <h3>BSc Undergraduate</h3>
+
+                <p>University of Sri Jayewardenepura</p>
+
+                <span>2024–Present</span>
+
+            </div>
+
+            <div class="timeline-item">
+
+                <h3>Advanced Level</h3>
+
+                <p>Physical Science Stream</p>
+
+                <span>Completed</span>
+
+            </div>
+
+        </div>
+
     </section>
 
     <section id="projects" class="fade-in">
@@ -86,6 +147,30 @@
         </div>
     </section>
 
+    <section id="social">
+
+        <h2 class="section-title">
+        Connect With Me
+        </h2>
+
+        <div class="social-links">
+
+            <a href="https://github.com/yourusername">
+            GitHub
+            </a>
+
+            <a href="https://linkedin.com/in/yourprofile">
+            LinkedIn
+            </a>
+
+            <a href="https://facebook.com/yourprofile">
+            Facebook
+            </a>
+
+        </div>
+
+    </section>
+
     <section id="contact" class="fade-in">
         <h2 class="section-title">Get In Touch</h2>
         <div class="contact-container">
@@ -97,6 +182,14 @@
             </form>
         </div>
     </section>
+
+    <footer>
+
+        <p>
+            © 2026 Chelaka Botheju | Portfolio Website
+        </p>
+
+    </footer>
 
     <script src="script.js"></script>
 </body>
