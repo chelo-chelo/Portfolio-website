@@ -1,418 +1,561 @@
-/* Color Palette Variables */
+/* =============================
+   Variables
+============================= */
+
 :root {
+
     --bg-dark: #050505;
-    /* This creates the dark gradient background */
-    --bg-gradient: linear-gradient(135deg, #050505 0%, #1a0b2e 50%, #000000 100%);
+
+    --bg-gradient:
+    linear-gradient(
+        135deg,
+        #050505 0%,
+        #1a0b2e 50%,
+        #000000 100%
+    );
+
     --primary-purple: #a855f7;
+
     --accent-yellow: #fbbf24;
+
     --text-light: #f3f4f6;
+
     --text-muted: #9ca3af;
-    --card-bg: rgba(255, 255, 255, 0.03);
-    --nav-bg: rgba(5, 5, 5, 0.85);
+
+    --card-bg: rgba(255,255,255,0.03);
+
+    --nav-bg: rgba(5,5,5,0.85);
+
 }
 
+
+/* =============================
+   Global
+============================= */
+
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Segoe UI', system-ui, sans-serif;
+
+    margin:0;
+    padding:0;
+
+    box-sizing:border-box;
+
+    font-family:
+    'Segoe UI',
+    sans-serif;
+
 }
 
 html {
-    scroll-behavior: smooth; /* Smooth scrolling for nav links */
+
+    scroll-behavior:smooth;
+
 }
 
 body {
-    background: var(--bg-gradient);
-    color: var(--text-light);
-    line-height: 1.6;
+
+    background:var(--bg-gradient);
+
+    color:var(--text-light);
+
+    line-height:1.6;
+
 }
 
-/* --- Sticky Navbar --- */
+section {
+
+    min-height:100vh;
+
+    padding:8rem 8% 4rem;
+
+}
+
+
+/* =============================
+   Progress Bar
+============================= */
+
+#progress-bar {
+
+    position:fixed;
+
+    top:0;
+    left:0;
+
+    width:0%;
+    height:5px;
+
+    background:var(--accent-yellow);
+
+    z-index:9999;
+
+}
+
+
+/* =============================
+   Navbar
+============================= */
+
 .navbar {
-    position: sticky;
-    top: 0;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1.5rem 8%;
-    background: var(--nav-bg);
-    backdrop-filter: blur(12px); /* Creates the frosted glass effect */
-    z-index: 1000;
-    border-bottom: 1px solid rgba(168, 85, 247, 0.15);
+
+    position:sticky;
+
+    top:0;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:1.5rem 8%;
+
+    background:var(--nav-bg);
+
+    backdrop-filter:blur(10px);
+
+    z-index:1000;
+
 }
 
 .logo {
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: var(--text-light);
+
+    font-size:1.5rem;
+
+    font-weight:700;
+
 }
 
 .nav-links {
-    display: flex;
-    list-style: none;
-    gap: 2.5rem;
+
+    display:flex;
+
+    gap:30px;
+
+    list-style:none;
+
 }
 
 .nav-links a {
-    color: var(--text-light);
-    text-decoration: none;
-    font-size: 1rem;
-    transition: color 0.3s ease;
+
+    text-decoration:none;
+
+    color:var(--text-light);
+
 }
 
 .nav-links a:hover {
-    color: var(--accent-yellow);
+
+    color:var(--accent-yellow);
+
 }
 
-/* --- General Layout --- */
-section {
-    min-height: 100vh;
-    padding: 8rem 8% 4rem;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+#theme-btn {
+
+    background:none;
+
+    border:none;
+
+    color:var(--text-light);
+
+    font-size:20px;
+
+    cursor:pointer;
+
 }
 
-/* --- Hero Section --- */
+
+/* =============================
+   Hero
+============================= */
+
 .hero-container {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 4rem;
-    width: 100%;
+
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    gap:50px;
+
 }
 
 .hero-text {
-    flex: 1;
+
+    flex:1;
+
 }
 
 .hero-image {
-    flex: 1;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+
+    flex:1;
+
+    display:flex;
+
+    justify-content:center;
+
 }
 
 .profile-pic {
-    width: 350px;
-    height: 350px;
-    object-fit: cover;
-    border-radius: 50%; /* Makes the image a perfect circle */
-    border: 4px solid var(--primary-purple);
-    box-shadow: 0 0 30px rgba(168, 85, 247, 0.3); /* Purple glow effect */
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-}
 
-.profile-pic:hover {
-    transform: scale(1.02);
-    box-shadow: 0 0 40px rgba(251, 191, 36, 0.4); /* Changes to yellow glow on hover */
+    width:350px;
+    height:350px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid var(--primary-purple);
+
+    box-shadow:
+    0 0 30px rgba(168,85,247,.4);
+
 }
 
 .greeting {
-    color: var(--primary-purple);
-    font-size: 1.2rem;
-    margin-bottom: 0.5rem;
+
+    color:var(--primary-purple);
+
 }
 
 .hero h1 {
-    font-size: 4.5rem;
-    line-height: 1.1;
-    margin-bottom: 1rem;
+
+    font-size:4rem;
+
 }
 
 .subtitle {
-    font-size: 2rem;
-    font-weight: 400;
-    margin-bottom: 1.5rem;
+
+    font-size:2rem;
+
+    margin:20px 0;
+
 }
 
-.highlight-purple { color: var(--primary-purple); }
-.highlight-yellow { color: var(--accent-yellow); }
+.typing {
+
+    color:var(--accent-yellow);
+
+}
 
 .description {
-    color: var(--text-muted);
-    max-width: 500px;
-    margin-bottom: 2.5rem;
+
+    color:var(--text-muted);
+
+    margin-bottom:30px;
+
 }
 
 .btn {
-    display: inline-block;
-    padding: 0.8rem 2rem;
-    background: transparent;
-    color: var(--accent-yellow);
-    border: 2px solid var(--accent-yellow);
-    border-radius: 30px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: all 0.3s ease;
+
+    display:inline-block;
+
+    text-decoration:none;
+
+    padding:12px 25px;
+
+    border-radius:30px;
+
+    border:2px solid var(--accent-yellow);
+
+    color:var(--accent-yellow);
+
+    transition:.3s;
+
 }
 
 .btn:hover {
-    background: var(--accent-yellow);
-    color: var(--bg-dark);
-    box-shadow: 0 0 20px rgba(251, 191, 36, 0.4);
+
+    background:var(--accent-yellow);
+
+    color:black;
+
 }
 
-/* --- Projects Section --- */
-.section-title {
-    font-size: 2.5rem;
-    margin-bottom: 3rem;
-    color: var(--text-light);
-}
 
-.project-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
-}
+/* =============================
+   About
+============================= */
 
-.project-card {
-    background: var(--card-bg);
-    padding: 2.5rem 2rem;
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.05);
-    transition: transform 0.4s ease, border-color 0.4s ease;
-}
-
-.project-card:hover {
-    transform: translateY(-10px);
-    border-color: var(--primary-purple);
-    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.1);
-}
-
-.card-icon {
-    font-size: 2.5rem;
-    margin-bottom: 1rem;
-}
-
-.project-card h3 {
-    margin-bottom: 1rem;
-    color: var(--text-light);
-}
-
-.project-card p {
-    color: var(--text-muted);
-    margin-bottom: 1.5rem;
-    font-size: 0.95rem;
-}
-
-.card-link {
-    color: var(--primary-purple);
-    text-decoration: none;
-    font-weight: 600;
-    transition: color 0.3s ease;
-}
-
-.card-link:hover {
-    color: var(--accent-yellow);
-}
-
-/* --- Animation Classes --- */
-.fade-in {
-    opacity: 0;
-    transform: translateY(30px);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-}
-
-.fade-in.appear {
-    opacity: 1;
-    transform: translateY(0);
-}
-/* --- About Section --- */
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+
+    display:grid;
+
+    grid-template-columns:1fr 1fr;
+
+    gap:50px;
+
 }
 
-.about-text h3, .skills-container h3 {
-    color: var(--accent-yellow);
-    margin-bottom: 1rem;
-    font-size: 1.5rem;
+.about-text h3,
+.skills-container h3 {
+
+    color:var(--accent-yellow);
+
+    margin-bottom:20px;
+
 }
 
 .education-list {
-    margin-top: 1.5rem;
-    list-style-type: none;
-    color: var(--text-muted);
+
+    margin-top:20px;
+
+    list-style:none;
+
 }
 
 .education-list li {
-    margin-bottom: 0.5rem;
+
+    margin-bottom:10px;
+
 }
 
-.education-list strong {
-    color: var(--text-light);
-}
+
+/* =============================
+   Skills
+============================= */
 
 .skill-tags {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 1rem;
+
+    display:flex;
+
+    flex-wrap:wrap;
+
+    gap:15px;
+
 }
 
 .skill-tag {
-    background: rgba(168, 85, 247, 0.1);
-    color: var(--primary-purple);
-    padding: 0.5rem 1rem;
-    border-radius: 20px;
-    border: 1px solid rgba(168, 85, 247, 0.3);
-    font-size: 0.9rem;
-    font-weight: 600;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:8px;
+
+    padding:10px 15px;
+
+    border-radius:30px;
+
+    border:1px solid rgba(168,85,247,.3);
+
+    background:rgba(168,85,247,.1);
+
 }
 
-/* --- Project Images --- */
+.skill-tag:hover {
+
+    transform:translateY(-5px);
+
+}
+
+
+/* =============================
+   Timeline
+============================= */
+
+.timeline {
+
+    border-left:3px solid var(--primary-purple);
+
+    padding-left:30px;
+
+}
+
+.timeline-item {
+
+    position:relative;
+
+    margin-bottom:40px;
+
+}
+
+.timeline-item::before {
+
+    content:"";
+
+    position:absolute;
+
+    width:15px;
+    height:15px;
+
+    background:var(--accent-yellow);
+
+    border-radius:50%;
+
+    left:-39px;
+    top:5px;
+
+}
+
+
+/* =============================
+   Projects
+============================= */
+
+.project-grid {
+
+    display:grid;
+
+    grid-template-columns:
+    repeat(auto-fit,minmax(300px,1fr));
+
+    gap:30px;
+
+}
+
+.project-card {
+
+    background:var(--card-bg);
+
+    padding:25px;
+
+    border-radius:15px;
+
+}
+
+.project-card:hover {
+
+    transform:translateY(-10px);
+
+}
+
 .card-image-placeholder {
-    width: 100%;
-    height: 200px;
-    background: rgba(0, 0, 0, 0.5);
-    border-radius: 8px;
-    margin-bottom: 1.5rem;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: var(--text-muted);
-    border: 1px dashed var(--primary-purple);
+
+    width:100%;
+
+    height:200px;
+
+    border-radius:10px;
+
+    border:1px dashed var(--primary-purple);
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-bottom:20px;
+
 }
 
-/* --- Contact Section --- */
-.contact-container {
-    max-width: 600px;
-    margin: 0 auto;
-    width: 100%;
+
+/* =============================
+   Social
+============================= */
+
+.social-links {
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:20px;
+
+    flex-wrap:wrap;
+
 }
+
+.social-links a {
+
+    text-decoration:none;
+
+    color:var(--text-light);
+
+    padding:12px 20px;
+
+    border-radius:30px;
+
+    border:1px solid var(--primary-purple);
+
+}
+
+.social-links a:hover {
+
+    background:var(--primary-purple);
+
+}
+
+.social-links i {
+
+    margin-right:10px;
+
+}
+
+
+/* =============================
+   Contact
+============================= */
 
 .contact-form {
-    display: flex;
-    flex-direction: column;
-    gap: 1.5rem;
+
+    display:flex;
+
+    flex-direction:column;
+
+    gap:20px;
+
 }
 
 .contact-form input,
 .contact-form textarea {
-    width: 100%;
-    padding: 1rem;
-    background: var(--card-bg);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 8px;
-    color: var(--text-light);
-    font-size: 1rem;
-    outline: none;
-    transition: border-color 0.3s ease;
-}
 
-.contact-form input:focus,
-.contact-form textarea:focus {
-    border-color: var(--accent-yellow);
+    padding:15px;
+
+    border:none;
+
+    border-radius:10px;
+
+    background:var(--card-bg);
+
+    color:white;
+
 }
 
 .contact-form button {
-    cursor: pointer;
-    font-size: 1rem;
-}
 
-/* --- Responsive Design (Mobile) --- */
-@media (max-width: 768px) {
-    .hero-container {
-        flex-direction: column-reverse; /* Puts image above text on mobile */
-        text-align: center;
-        margin-top: 2rem;
-    }
-    
-    .description {
-        margin: 0 auto 2.5rem auto; /* Centers the description text */
-    }
-
-    .profile-pic {
-        width: 250px;
-        height: 250px;
-        margin-bottom: 2rem;
-    }
-
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-    }
-    .nav-links {
-        display: none; 
-    }
-    .hero h1 {
-        font-size: 3rem;
-    }
-}
-
-/* Skills */
-
-.bar{
-    height:10px;
-    background:#333;
-    border-radius:10px;
-    overflow:hidden;
-    margin-bottom:20px;
-}
-
-.fill{
-    height:100%;
-    background:var(--primary-purple);
-}
-
-.html{
-    width:90%;
-}
-
-.css{
-    width:85%;
-}
-
-.design{
-    width:95%;
-}
-
-/* Timeline */
-
-.timeline{
-    border-left:3px solid var(--primary-purple);
-    padding-left:30px;
-}
-
-.timeline-item{
-    margin-bottom:30px;
-}
-
-/* Theme Button */
-
-#theme-btn{
-    padding:10px;
-    border:none;
-    background:none;
-    color:white;
-    font-size:20px;
     cursor:pointer;
+
 }
 
-/* Footer */
 
-footer{
-    text-align:center;
-    padding:30px;
-    color:var(--text-muted);
-}
 /* =============================
-   Scroll Progress Bar
+   Footer
 ============================= */
 
-#progress-bar {
-    position: fixed;
-    top: 0;
-    left: 0;
+footer {
 
-    width: 0%;
-    height: 5px;
+    text-align:center;
 
-    background: var(--accent-yellow);
+    padding:30px;
 
-    z-index: 9999;
+    color:var(--text-muted);
+
+}
+
+
+/* =============================
+   Animation
+============================= */
+
+.fade-in {
+
+    opacity:0;
+
+    transform:translateY(30px);
+
+    transition:.8s;
+
+}
+
+.fade-in.appear {
+
+    opacity:1;
+
+    transform:translateY(0);
+
 }
 
 
@@ -422,70 +565,68 @@ footer{
 
 .light-theme {
 
-    --bg-dark: #ffffff;
+    --bg-dark:#ffffff;
 
-    --bg-gradient: linear-gradient(
+    --bg-gradient:
+    linear-gradient(
         135deg,
         #ffffff,
-        #f5f5f5
+        #f2f2f2
     );
 
-    --text-light: #111111;
+    --text-light:#111;
 
-    --text-muted: #555555;
+    --text-muted:#555;
 
-    --card-bg: rgba(
-        0,
-        0,
-        0,
-        0.05
-    );
+    --card-bg:rgba(0,0,0,.05);
 
-    --nav-bg: rgba(
+    --nav-bg:rgba(
         255,
         255,
         255,
-        0.9
+        .9
     );
-}
-
-
-/* =============================
-   Theme Button
-============================= */
-
-#theme-btn {
-
-    background: none;
-    border: none;
-
-    color: var(--text-light);
-
-    font-size: 1.2rem;
-
-    cursor: pointer;
-
-    transition: transform 0.3s ease;
-
-}
-
-#theme-btn:hover {
-
-    transform: scale(1.2);
 
 }
 
 
 /* =============================
-   Typing Text
+   Mobile
 ============================= */
 
-.typing {
+@media(max-width:768px){
 
-    color: var(--primary-purple);
+.hero-container{
 
-    font-size: 2rem;
+flex-direction:column-reverse;
 
-    font-weight: bold;
+text-align:center;
+
+}
+
+.about-content{
+
+grid-template-columns:1fr;
+
+}
+
+.profile-pic{
+
+width:250px;
+height:250px;
+
+}
+
+.nav-links{
+
+display:none;
+
+}
+
+.hero h1{
+
+font-size:3rem;
+
+}
 
 }
