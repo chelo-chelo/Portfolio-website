@@ -36,5 +36,3 @@ const themeBtn = document.getElementById("theme-btn");
 themeBtn.addEventListener("click",()=>{
     document.body.classList.toggle("light-theme");
 });
-
-// The previous Javascript typing effect code block has been fully removed.
