@@ -155,6 +155,14 @@ section {
     object-fit: cover;
     border: 4px solid var(--primary-purple);
     box-shadow: 0 0 30px rgba(168,85,247,.4);
+    /* Subtle float animation for the profile pic */
+    animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
 }
 
 .greeting {
@@ -165,13 +173,37 @@ section {
     font-size: 4rem;
 }
 
+/* New Scroller Animation */
 .subtitle {
     font-size: 2rem;
     margin: 20px 0;
+    height: 3rem;
 }
 
-.typing {
+.scroller-container {
+    height: 3rem;
+    overflow: hidden;
+}
+
+.scroller-text {
+    display: flex;
+    flex-direction: column;
+    animation: scrollText 6s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
     color: var(--accent-yellow);
+    line-height: 3rem;
+}
+
+.scroller-text span {
+    height: 3rem;
+    display: flex;
+    align-items: center;
+}
+
+@keyframes scrollText {
+    0%, 25% { transform: translateY(0); }
+    33.33%, 58.33% { transform: translateY(-3rem); }
+    66.66%, 91.66% { transform: translateY(-6rem); }
+    100% { transform: translateY(-9rem); }
 }
 
 .description {
