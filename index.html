@@ -1,312 +1,128 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chelaka Botheju | Portfolio</title>
-
     <link rel="stylesheet" href="style.css">
-
-    <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
 </head>
-
 <body>
+
+    <!-- Loading Screen -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
 
     <div id="progress-bar"></div>
 
     <nav class="navbar">
-
-        <div class="logo">
-            Chelaka B.
-        </div>
-
+        <div class="logo">Chelaka B.</div>
         <ul class="nav-links">
-
             <li><a href="#home">Home</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#education">Education</a></li>
             <li><a href="#projects">Projects</a></li>
             <li><a href="#social">Social</a></li>
             <li><a href="#contact">Contact</a></li>
-
         </ul>
-
-        <button id="theme-btn">
-            🌙
-        </button>
-
+        <button id="theme-btn">🌙</button>
     </nav>
 
     <!-- Hero -->
-
     <section id="home" class="hero fade-in">
-
         <div class="hero-container">
-
             <div class="hero-text">
-
-                <p class="greeting">
-                    Hello, I'm
-                </p>
-
-                <h1>
-                    W. T. N. Chelaka Botheju
-                </h1>
-
+                <p class="greeting">Hello, I'm</p>
+                <h1>W. T. N. Chelaka Botheju</h1>
                 <h2 class="subtitle">
-
                     <span class="typing"></span>
-
                 </h2>
-
                 <p class="description">
-
                     I am an undergraduate student passionate about software development and a professional graphic designer since 2020. I enjoy combining creativity with technical skills to build meaningful projects.
-
                 </p>
-
-                <a href="#projects" class="btn">
-                    Explore My Work
-                </a>
-
+                <a href="#projects" class="btn">Explore My Work</a>
             </div>
-
             <div class="hero-image">
-
                 <img src="profile.png.png" class="profile-pic">
-
             </div>
-
         </div>
-
     </section>
 
     <!-- About -->
-
     <section id="about" class="fade-in">
-
-        <h2 class="section-title">
-            About Me
-        </h2>
-
+        <h2 class="section-title">About Me</h2>
         <div class="about-content">
-
             <div class="about-text">
-
-                <h3>
-                    Personal Information
-                </h3>
-
-                <p>
-
-                    I am a BSc ICT undergraduate at University of Sri Jayewardenepura with interests in software development and creative design.
-
-                </p>
-
+                <h3>Personal Information</h3>
+                <p>I am a BSc ICT undergraduate at University of Sri Jayewardenepura with interests in software development and creative design.</p>
                 <ul class="education-list">
-
-                    <li>
-                        <strong>Location:</strong>
-                        Colombo, Sri Lanka
-                    </li>
-
-                    <li>
-                        <strong>Email:</strong>
-                        chelakabotheju@gmail.com
-                    </li>
-
-                    <li>
-                        <strong>Phone:</strong>
-                        0760497677
-                    </li>
-
+                    <li><strong>Location:</strong> Colombo, Sri Lanka</li>
+                    <li><strong>Email:</strong> chelakabotheju@gmail.com</li>
+                    <li><strong>Phone:</strong> 0760497677</li>
                 </ul>
-
             </div>
-
             <div class="skills-container">
-
-                <h3>
-                    Skills
-                </h3>
-
+                <h3>Skills</h3>
                 <div class="skill-tags">
-
-                    <span class="skill-tag">
-                        <i class="fa-brands fa-html5"></i> HTML
-                    </span>
-
-                    <span class="skill-tag">
-                        <i class="fa-brands fa-css3-alt"></i> CSS
-                    </span>
-
-                    <span class="skill-tag">
-                        <i class="fa-brands fa-js"></i> JavaScript
-                    </span>
-
-                    <span class="skill-tag">
-                        <i class="fa-brands fa-java"></i> Java
-                    </span>
-
-                    <span class="skill-tag">
-                        <i class="fa-brands fa-python"></i> Python
-                    </span>
-
-                    <span class="skill-tag">
-                        <i class="fa-solid fa-database"></i> SQL
-                    </span>
-
-                    <span class="skill-tag">
-                        <i class="fa-brands fa-git-alt"></i> Git
-                    </span>
-
-                    <span class="skill-tag">
-                        <i class="fa-brands fa-figma"></i> Figma
-                    </span>
-
-                    <span class="skill-tag">
-                        <i class="fa-solid fa-pen-ruler"></i> Photoshop
-                    </span>
-
+                    <span class="skill-tag"><i class="fa-brands fa-html5"></i> HTML</span>
+                    <span class="skill-tag"><i class="fa-brands fa-css3-alt"></i> CSS</span>
+                    <span class="skill-tag"><i class="fa-brands fa-js"></i> JavaScript</span>
+                    <span class="skill-tag"><i class="fa-brands fa-java"></i> Java</span>
+                    <span class="skill-tag"><i class="fa-brands fa-python"></i> Python</span>
+                    <span class="skill-tag"><i class="fa-solid fa-database"></i> SQL</span>
+                    <span class="skill-tag"><i class="fa-brands fa-git-alt"></i> Git</span>
+                    <span class="skill-tag"><i class="fa-brands fa-figma"></i> Figma</span>
+                    <span class="skill-tag"><i class="fa-solid fa-pen-ruler"></i> Photoshop</span>
                 </div>
-
             </div>
-
         </div>
-
     </section>
 
     <!-- Education -->
-
     <section id="education" class="fade-in">
-
-        <h2 class="section-title">
-            Education
-        </h2>
-
+        <h2 class="section-title">Education</h2>
         <div class="timeline">
-
             <div class="timeline-item">
-
-                <h3>
-                    University of Sri Jayewardenepura
-                </h3>
-
-                <p>
-                    BSc in ICT
-                </p>
-
-                <span>
-                    2025-2028
-                </span>
-
+                <h3>University of Sri Jayewardenepura</h3>
+                <p>BSc in ICT</p>
+                <span>2025-2028</span>
             </div>
-
             <div class="timeline-item">
-
-                <h3>
-                    St. Aloysius College Ratnapura
-                </h3>
-
-                <p>
-                    Physical Science Stream
-                </p>
-
+                <h3>St. Aloysius College Ratnapura</h3>
+                <p>Physical Science Stream</p>
             </div>
-
         </div>
-
     </section>
 
     <!-- KEEP YOUR PROJECT SECTION -->
 
-
-
     <!-- Social -->
-
     <section id="social" class="fade-in">
-
-        <h2 class="section-title">
-
-            Connect With Me
-
-        </h2>
-
+        <h2 class="section-title">Connect With Me</h2>
         <div class="social-links">
-
-            <a href="https://github.com/chelo-chelo">
-
-                <i class="fa-brands fa-github"></i>
-                GitHub
-
-            </a>
-
-            <a href="https://www.linkedin.com/in/chelaka-botheju-6417601a7">
-
-                <i class="fa-brands fa-linkedin"></i>
-                LinkedIn
-
-            </a>
-
-            <a href="https://web.facebook.com/chelaka.botheju">
-
-                <i class="fa-brands fa-facebook"></i>
-                Facebook
-
-            </a>
-
-            <a href="https://www.instagram.com/chelo_x18">
-
-                <i class="fa-brands fa-instagram"></i>
-                Instagram
-
-            </a>
-
+            <a href="https://github.com/chelo-chelo"><i class="fa-brands fa-github"></i> GitHub</a>
+            <a href="https://www.linkedin.com/in/chelaka-botheju-6417601a7"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+            <a href="https://web.facebook.com/chelaka.botheju"><i class="fa-brands fa-facebook"></i> Facebook</a>
+            <a href="https://www.instagram.com/chelo_x18"><i class="fa-brands fa-instagram"></i> Instagram</a>
         </div>
-
     </section>
 
     <!-- Contact -->
-
     <section id="contact" class="fade-in">
-
-        <h2 class="section-title">
-
-            Contact Me
-
-        </h2>
-
+        <h2 class="section-title">Contact Me</h2>
         <form class="contact-form">
-
-            <input type="text"
-                placeholder="Your Name">
-
-            <input type="email"
-                placeholder="Your Email">
-
-            <textarea rows="5"
-                placeholder="Your Message"></textarea>
-
-            <button class="btn">
-
-                Send
-
-            </button>
-
+            <input type="text" placeholder="Your Name">
+            <input type="email" placeholder="Your Email">
+            <textarea rows="5" placeholder="Your Message"></textarea>
+            <button class="btn">Send</button>
         </form>
-
     </section>
 
     <footer>
-
         © 2026 Chelaka Botheju Portfolio
-
     </footer>
 
-<script src="script.js"></script>
-
+    <script src="script.js"></script>
 </body>
 </html>
