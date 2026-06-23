@@ -438,6 +438,68 @@ section {
 }
 
 /* =============================
+   Certificates
+============================= */
+.cert-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.cert-card {
+    background: var(--card-bg);
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 1px solid transparent;
+}
+
+.cert-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.3);
+}
+
+.cert-image-placeholder {
+    width: 100%;
+    height: 140px;
+    background: rgba(168, 85, 247, 0.05);
+    border: 1px dashed var(--primary-purple);
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+    color: var(--primary-purple);
+}
+
+.cert-card h4 {
+    color: var(--text-light);
+    font-size: 1.1rem;
+    margin-bottom: 5px;
+}
+
+.cert-card p {
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+.cert-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: var(--accent-yellow);
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+.cert-link:hover {
+    text-decoration: underline;
+}
+
+
+/* =============================
    Modal & Slideshow
 ============================= */
 .modal {
