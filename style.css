@@ -347,17 +347,47 @@ section {
 .timeline-item {
     position: relative;
     margin-bottom: 40px;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    transition: transform 0.3s ease;
+}
+
+.timeline-item:hover {
+    transform: translateX(10px);
 }
 
 .timeline-item::before {
     content: "";
     position: absolute;
-    width: 15px;
-    height: 15px;
-    background: var(--accent-yellow);
+    width: 16px;
+    height: 16px;
+    background: var(--bg-dark);
+    border: 4px solid var(--accent-yellow);
     border-radius: 50%;
-    left: -39px;
-    top: 5px;
+    left: -43.5px;
+    top: 25px;
+}
+
+.timeline-date {
+    display: inline-block;
+    background: rgba(168, 85, 247, 0.2);
+    color: var(--primary-purple);
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+}
+
+.timeline-item h3 {
+    color: var(--text-light);
+    margin-bottom: 5px;
+    font-size: 1.2rem;
+}
+
+.timeline-item p {
+    color: var(--text-muted);
 }
 
 /* =============================
