@@ -177,7 +177,84 @@
         </div>
     </section>
 
-    <!-- KEEP YOUR PROJECT SECTION -->
+    <!-- Projects -->
+    <section id="projects" class="fade-in">
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-grid">
+            
+            <div class="project-card" onclick="openModal('project1')">
+                <div class="card-image-placeholder">
+                    <i class="fa-solid fa-image fa-3x"></i>
+                </div>
+                <h3>Project 1</h3>
+                <p>Sample project description. Click to view more details and screenshots.</p>
+                <div class="skill-tags" style="margin-top: 15px;">
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">HTML</span>
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">CSS</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project2')">
+                <div class="card-image-placeholder">
+                    <i class="fa-solid fa-image fa-3x"></i>
+                </div>
+                <h3>Project 2</h3>
+                <p>Sample project description. Click to view more details and screenshots.</p>
+                <div class="skill-tags" style="margin-top: 15px;">
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">Java</span>
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">SQL</span>
+                </div>
+            </div>
+
+            <div class="project-card" onclick="openModal('project3')">
+                <div class="card-image-placeholder">
+                    <i class="fa-solid fa-image fa-3x"></i>
+                </div>
+                <h3>Project 3</h3>
+                <p>Sample project description. Click to view more details and screenshots.</p>
+                <div class="skill-tags" style="margin-top: 15px;">
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">Figma</span>
+                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">Photoshop</span>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Modal for Slideshow -->
+    <div id="project-modal" class="modal">
+        <div class="modal-content">
+            <span class="close-btn" onclick="closeModal()">&times;</span>
+            <h3 id="modal-title">Project Title</h3>
+            <p id="modal-desc">Project description goes here.</p>
+            
+            <div class="slideshow-container">
+                <div class="slide fade">
+                    <div class="slide-placeholder"><i class="fa-solid fa-image fa-4x"></i><br>Screenshot 1</div>
+                </div>
+                <div class="slide fade">
+                    <div class="slide-placeholder"><i class="fa-solid fa-image fa-4x"></i><br>Screenshot 2</div>
+                </div>
+                <div class="slide fade">
+                    <div class="slide-placeholder"><i class="fa-solid fa-image fa-4x"></i><br>Screenshot 3</div>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                <a class="next" onclick="plusSlides(1)">&#10095;</a>
+            </div>
+            
+            <div style="text-align:center; margin-top: 15px;">
+                <span class="dot" onclick="currentSlide(1)"></span> 
+                <span class="dot" onclick="currentSlide(2)"></span> 
+                <span class="dot" onclick="currentSlide(3)"></span> 
+            </div>
+            
+            <div class="modal-links">
+                <a href="#" id="modal-github" target="_blank" class="btn btn-outline"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="#" id="modal-live" target="_blank" class="btn"><i class="fa-solid fa-link"></i> Live Demo</a>
+            </div>
+        </div>
+    </div>
 
     <!-- Social -->
     <section id="social" class="fade-in">

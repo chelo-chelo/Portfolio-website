@@ -320,6 +320,22 @@ section {
     transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
+.skill-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.skill-tag {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px 15px;
+    border-radius: 30px;
+    border: 1px solid rgba(168,85,247,.3);
+    background: rgba(168,85,247,.1);
+}
+
 /* =============================
    Timeline
 ============================= */
@@ -357,10 +373,13 @@ section {
     background: var(--card-bg);
     padding: 25px;
     border-radius: 15px;
+    cursor: pointer;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(168, 85, 247, 0.2);
 }
 
 .card-image-placeholder {
@@ -369,9 +388,163 @@ section {
     border-radius: 10px;
     border: 1px dashed var(--primary-purple);
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
     margin-bottom: 20px;
+    color: var(--primary-purple);
+    background: rgba(168, 85, 247, 0.05);
+}
+
+.project-card h3 {
+    color: var(--text-light);
+    margin-bottom: 10px;
+}
+
+.project-card p {
+    color: var(--text-muted);
+    margin-bottom: 15px;
+    font-size: 0.95rem;
+}
+
+/* =============================
+   Modal & Slideshow
+============================= */
+.modal {
+    display: none; 
+    position: fixed; 
+    z-index: 10000; 
+    left: 0;
+    top: 0;
+    width: 100%; 
+    height: 100%; 
+    overflow: auto; 
+    background-color: rgba(0,0,0,0.8); 
+    backdrop-filter: blur(5px);
+}
+
+.modal-content {
+    background-color: var(--bg-dark);
+    margin: 5% auto; 
+    padding: 30px;
+    border: 1px solid var(--primary-purple);
+    width: 90%;
+    max-width: 800px;
+    border-radius: 15px;
+    position: relative;
+    color: var(--text-light);
+}
+
+.close-btn {
+    color: var(--text-muted);
+    position: absolute;
+    top: 15px;
+    right: 25px;
+    font-size: 35px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+    z-index: 2;
+}
+
+.close-btn:hover {
+    color: var(--accent-yellow);
+}
+
+.modal-content h3 {
+    color: var(--primary-purple);
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+.modal-content p {
+    margin-bottom: 20px;
+    color: var(--text-muted);
+    line-height: 1.6;
+}
+
+.modal-links {
+    display: flex;
+    gap: 15px;
+    margin-top: 25px;
+}
+
+.slideshow-container {
+    max-width: 100%;
+    position: relative;
+    margin: auto;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.slide {
+    display: none;
+    width: 100%;
+    height: 350px;
+    background: var(--card-bg);
+}
+
+.slide-placeholder {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    color: var(--primary-purple);
+    border: 1px dashed var(--primary-purple);
+    border-radius: 10px;
+    background: rgba(168, 85, 247, 0.05);
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 0 3px 3px 0;
+    user-select: none;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: var(--primary-purple);
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #555;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.6s ease;
+}
+
+.active, .dot:hover {
+    background-color: var(--accent-yellow);
+}
+
+.fade {
+    animation-name: slideFade;
+    animation-duration: 1.5s;
+}
+
+@keyframes slideFade {
+    from {opacity: .4} 
+    to {opacity: 1}
 }
 
 /* =============================
