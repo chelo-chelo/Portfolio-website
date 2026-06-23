@@ -274,26 +274,50 @@ section {
 }
 
 /* =============================
-   Skills
+   Skills with Proficiency Bars
 ============================= */
-.skill-tags {
+.skill-bars {
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px;
+    flex-direction: column;
+    gap: 20px;
+    width: 100%;
 }
 
-.skill-tag {
-    display: flex;
-    align-items: center;
-    gap: 8px;
-    padding: 10px 15px;
-    border-radius: 30px;
-    border: 1px solid rgba(168,85,247,.3);
-    background: rgba(168,85,247,.1);
+.skill-item {
+    width: 100%;
 }
 
-.skill-tag:hover {
-    transform: translateY(-5px);
+.skill-info {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.skill-info i {
+    color: var(--accent-yellow);
+    margin-right: 8px;
+    width: 20px;
+    text-align: center;
+}
+
+.progress-line {
+    width: 100%;
+    height: 10px;
+    background: rgba(168, 85, 247, 0.2);
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.progress-line span {
+    display: block;
+    height: 100%;
+    background: var(--primary-purple);
+    border-radius: 10px;
+    width: 0%; /* JS animates this */
+    transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 /* =============================
