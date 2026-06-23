@@ -498,6 +498,46 @@ section {
     text-decoration: underline;
 }
 
+/* =============================
+   Achievements
+============================= */
+.achievement-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 25px;
+}
+
+.achievement-card {
+    display: flex;
+    align-items: center;
+    background: var(--card-bg);
+    padding: 25px;
+    border-radius: 15px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid var(--accent-yellow);
+}
+
+.achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(251, 191, 36, 0.15);
+}
+
+.achievement-icon {
+    font-size: 2.5rem;
+    color: var(--accent-yellow);
+    margin-right: 30px;
+}
+
+.achievement-info h4 {
+    color: var(--text-light);
+    font-size: 1.2rem;
+    margin-bottom: 5px;
+}
+
+.achievement-info p {
+    color: var(--text-muted);
+    font-size: 0.95rem;
+}
 
 /* =============================
    Modal & Slideshow
