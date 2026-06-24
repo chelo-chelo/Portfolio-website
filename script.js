@@ -129,3 +129,20 @@ function showSlides(n) {
     if(slides[slideIndex-1]) slides[slideIndex-1].style.display = "block";  
     if(dots[slideIndex-1]) dots[slideIndex-1].className += " active";
 }
+
+// =============================
+// Visitor Counter API
+// =============================
+const visitorCountEl = document.getElementById("visitor-count");
+if (visitorCountEl) {
+    // Unique namespace and key generated for your portfolio
+    fetch("https://api.counterapi.dev/v1/chelaka_portfolio/visits/up")
+        .then(res => res.json())
+        .then(data => {
+            visitorCountEl.innerText = data.count;
+        })
+        .catch(err => {
+            // Fallback in case the API is temporarily down
+            visitorCountEl.innerText = "1,000+"; 
+        });
+}
