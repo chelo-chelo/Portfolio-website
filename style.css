@@ -32,6 +32,12 @@ body {
     line-height: 1.6;
 }
 
+/* Keep the content above the ambient glow */
+section, .navbar, footer {
+    position: relative;
+    z-index: 1;
+}
+
 section {
     min-height: 100vh;
     padding: 8rem 8% 4rem;
@@ -70,6 +76,28 @@ section {
 .loader-hidden {
     opacity: 0;
     pointer-events: none;
+}
+
+/* =============================
+   Ambient Background Glow
+============================= */
+.ambient-glow {
+    width: 800px;
+    height: 800px;
+    background: radial-gradient(circle, rgba(168, 85, 247, 0.08) 0%, rgba(168, 85, 247, 0) 70%);
+    border-radius: 50%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 0; /* Send to the very back */
+    transform: translate(-50%, -50%);
+}
+
+@media(max-width: 768px) {
+    .ambient-glow {
+        display: none !important;
+    }
 }
 
 /* =============================
@@ -721,10 +749,6 @@ section {
     border-radius: 10px;
     background: var(--card-bg);
     color: white;
-}
-
-.contact-form button {
-    cursor: pointer;
 }
 
 /* =============================

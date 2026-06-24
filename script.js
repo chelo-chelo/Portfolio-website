@@ -1,4 +1,22 @@
 // =============================
+// Ambient Background Glow
+// =============================
+const ambientGlow = document.querySelector(".ambient-glow");
+
+if (ambientGlow) {
+    window.addEventListener("mousemove", (e) => {
+        const posX = e.clientX;
+        const posY = e.clientY;
+
+        // Smooth follow effect behind everything
+        ambientGlow.animate({
+            left: `${posX}px`,
+            top: `${posY}px`
+        }, { duration: 800, fill: "forwards" });
+    });
+}
+
+// =============================
 // Loader
 // =============================
 window.addEventListener("load", () => {
@@ -135,14 +153,52 @@ function showSlides(n) {
 // =============================
 const visitorCountEl = document.getElementById("visitor-count");
 if (visitorCountEl) {
-    // Unique namespace and key generated for your portfolio
     fetch("https://api.counterapi.dev/v1/chelaka_portfolio/visits/up")
         .then(res => res.json())
         .then(data => {
             visitorCountEl.innerText = data.count;
         })
         .catch(err => {
-            // Fallback in case the API is temporarily down
             visitorCountEl.innerText = "1,000+"; 
         });
+}
+
+// =============================
+// EmailJS Contact Form Setup
+// =============================
+if (typeof emailjs !== "undefined") {
+    emailjs.init("-_8t8FDbj3nwn4V57L");
+
+    const contactForm = document.getElementById("contact-form");
+    const formStatus = document.getElementById("form-status");
+    const submitBtn = document.getElementById("submit-btn");
+
+    if (contactForm) {
+        contactForm.addEventListener("submit", function(event) {
+            event.preventDefault(); 
+
+            const originalBtnText = submitBtn.innerText;
+            submitBtn.innerText = "Sending...";
+            submitBtn.disabled = true;
+
+            emailjs.sendForm('service_ord3caa', 'template_sh8kuva', this)
+                .then(() => {
+                    formStatus.style.color = "#4ade80"; 
+                    formStatus.innerText = "Message sent successfully!";
+                    contactForm.reset();
+                }, (error) => {
+                    formStatus.style.color = "#f87171"; 
+                    formStatus.innerText = "Failed to send message. Please try again.";
+                    console.error("EmailJS Error:", error);
+                })
+                .finally(() => {
+                    submitBtn.innerText = originalBtnText;
+                    submitBtn.disabled = false;
+                    
+                    setTimeout(() => {
+                        formStatus.innerText = "";
+                    }, 5000);
+                });
+        });
+    }
 }
