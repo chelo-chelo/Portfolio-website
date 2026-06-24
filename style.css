@@ -514,17 +514,13 @@ section {
     border-color: rgba(168, 85, 247, 0.3);
 }
 
-.cert-image-placeholder {
+.cert-image {
     width: 100%;
     height: 140px;
-    background: rgba(168, 85, 247, 0.05);
-    border: 1px dashed var(--primary-purple);
+    object-fit: cover; /* Ensures image fills container nicely */
     border-radius: 10px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
     margin-bottom: 15px;
-    color: var(--primary-purple);
+    border: 1px solid rgba(168, 85, 247, 0.3);
 }
 
 .cert-card h4 {
