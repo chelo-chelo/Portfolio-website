@@ -60,17 +60,26 @@ section {
     transition: opacity 0.5s ease;
 }
 
-.spinner {
-    width: 50px;
-    height: 50px;
-    border: 5px solid rgba(168, 85, 247, 0.3);
-    border-top-color: var(--primary-purple);
-    border-radius: 50%;
-    animation: spin 1s linear infinite;
+.loader-text {
+    font-size: 3rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    text-align: center;
+    
+    /* Creates a gradient that sweeps across the text */
+    background: linear-gradient(90deg, var(--text-muted) 0%, var(--primary-purple) 50%, var(--text-muted) 100%);
+    background-size: 200% auto;
+    color: transparent;
+    -webkit-background-clip: text;
+    background-clip: text;
+    animation: shine 2s linear infinite;
 }
 
-@keyframes spin {
-    to { transform: rotate(360deg); }
+@keyframes shine {
+    to {
+        background-position: 200% center;
+    }
 }
 
 .loader-hidden {
@@ -196,7 +205,6 @@ section {
     height: auto;
     object-fit: contain;
     
-    /* Removed circle, border, and solid box-shadow */
     border-radius: 0;
     border: none;
     box-shadow: none;
