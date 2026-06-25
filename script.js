@@ -348,3 +348,62 @@ if(contactForm) {
             });
     });
 }
+// =============================
+// Visitor Counter & Animation
+// =============================
+async function updateVisitorCount() {
+    const visitorCountElement = document.getElementById("visitor-count");
+    if (!visitorCountElement) return;
+
+    try {
+        // Free Global Counter API
+        // It uniquely tracks 'chelakabotheju' -> 'portfolio_visits'
+        const response = await fetch("https://api.counterapi.dev/v1/chelakabotheju/portfolio_visits/up");
+        
+        if (!response.ok) throw new Error("API not responding");
+
+        const data = await response.json();
+        
+        if (data && data.count) {
+            // Animate the counter for a premium feel
+            animateValue(visitorCountElement, 0, data.count, 1500);
+        }
+    } catch (error) {
+        console.warn("Using local fallback counter due to API issue.");
+        
+        // Fallback to Local Storage if offline (tracks local browser visits)
+        let localVisits = localStorage.getItem("portfolio_visits");
+        if (!localVisits) {
+            localVisits = 1; 
+        } else {
+            localVisits = parseInt(localVisits) + 1;
+        }
+        localStorage.setItem("portfolio_visits", localVisits);
+        visitorCountElement.innerText = localVisits;
+    }
+}
+
+// Premium Number Animation Function
+function animateValue(obj, start, end, duration) {
+    let startTimestamp = null;
+    const step = (timestamp) => {
+        if (!startTimestamp) startTimestamp = timestamp;
+        
+        // Calculate progress
+        const progress = Math.min((timestamp - startTimestamp) / duration, 1);
+        
+        // Ease-out effect (starts fast, slows down at the end)
+        const easeOut = progress * (2 - progress);
+        obj.innerHTML = Math.floor(easeOut * (end - start) + start);
+        
+        if (progress < 1) {
+            window.requestAnimationFrame(step);
+        } else {
+            obj.innerHTML = end; // Ensure exact final number is set
+        }
+    };
+    window.requestAnimationFrame(step);
+}
+
+// Initialize on page load
+window.addEventListener("DOMContentLoaded", updateVisitorCount);

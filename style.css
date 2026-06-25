@@ -1028,3 +1028,167 @@ footer {
     .nav-links { display: none; }
     .hero h1 { font-size: 3rem; }
 }
+
+/* =============================
+   BALANCED SECTION SPACING
+============================= */
+
+/* General sections */
+section{
+    min-height:auto !important;
+    padding:6rem 8% 4rem !important;
+}
+
+/* Hero remains full screen */
+.hero{
+    min-height:100vh !important;
+    display:flex;
+    align-items:center;
+}
+
+/* Section titles */
+.section-title{
+    text-align:center;
+    margin-bottom:3rem;
+    font-size:2rem;
+}
+
+/* Internal section spacing */
+#about,
+#skills,
+#education,
+#projects,
+#social,
+#contact,
+#certificates,
+#achievements,
+#blogs,
+#memberships{
+    padding-top:5rem !important;
+    padding-bottom:4rem !important;
+}
+
+/* Grid spacing */
+.skills-grid,
+.project-grid,
+.cert-grid,
+.award-grid{
+    margin-top:2.5rem;
+    gap:30px;
+}
+
+/* Timeline spacing */
+.timeline{
+    margin-top:2rem;
+}
+
+.timeline-item{
+    margin-bottom:30px;
+}
+
+/* About section improvements */
+.centered-about{
+    max-width:900px;
+    margin:auto;
+}
+
+.horizontal-list{
+    margin-top:25px;
+    gap:40px;
+}
+
+/* Contact form */
+.contact-form{
+    margin-top:2rem;
+}
+
+/* Footer */
+footer{
+    margin-top:2rem;
+    padding:30px;
+}
+
+/* Mobile optimization */
+@media(max-width:768px){
+
+    section{
+        padding:4rem 5% 3rem !important;
+    }
+
+    .hero{
+        min-height:90vh !important;
+    }
+
+    .section-title{
+        margin-bottom:2rem;
+        font-size:1.8rem;
+    }
+
+    .skills-grid,
+    .project-grid,
+    .cert-grid,
+    .award-grid{
+        gap:20px;
+    }
+
+    .horizontal-list{
+        gap:20px;
+    }
+}
+/* =============================
+   Split Contact Layout
+============================= */
+
+.contact-container{
+    display:flex;
+    gap:50px;
+    align-items:flex-start;
+    justify-content:space-between;
+}
+
+.contact-left,
+.contact-right{
+    flex:1;
+    background:var(--card-bg);
+    padding:35px;
+    border-radius:20px;
+    border:1px solid rgba(168,85,247,.2);
+}
+
+.contact-text{
+    color:var(--text-muted);
+    margin-bottom:30px;
+}
+
+.contact-left .social-links{
+    display:flex;
+    flex-direction:column;
+    gap:15px;
+}
+
+.contact-left .social-btn{
+    width:100%;
+    justify-content:center;
+}
+
+.contact-right .contact-form{
+    max-width:100%;
+}
+
+#form-status{
+    margin-top:15px;
+    text-align:center;
+}
+
+/* Mobile */
+@media(max-width:768px){
+
+    .contact-container{
+        flex-direction:column;
+    }
+
+    .contact-left,
+    .contact-right{
+        width:100%;
+    }
+}
