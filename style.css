@@ -32,7 +32,6 @@ body {
     line-height: 1.6;
 }
 
-/* Keep the content above the ambient glow */
 section, .navbar, footer {
     position: relative;
     z-index: 1;
@@ -66,8 +65,6 @@ section {
     text-transform: uppercase;
     letter-spacing: 4px;
     text-align: center;
-    
-    /* Creates a gradient that sweeps across the text */
     background: linear-gradient(90deg, var(--text-muted) 0%, var(--primary-purple) 50%, var(--text-muted) 100%);
     background-size: 200% auto;
     color: transparent;
@@ -77,9 +74,7 @@ section {
 }
 
 @keyframes shine {
-    to {
-        background-position: 200% center;
-    }
+    to { background-position: 200% center; }
 }
 
 .loader-hidden {
@@ -99,14 +94,12 @@ section {
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: 0; /* Send to the very back */
+    z-index: 0;
     transform: translate(-50%, -50%);
 }
 
 @media(max-width: 768px) {
-    .ambient-glow {
-        display: none !important;
-    }
+    .ambient-glow { display: none !important; }
 }
 
 /* =============================
@@ -151,10 +144,16 @@ section {
 .nav-links a {
     text-decoration: none;
     color: var(--text-light);
+    cursor: pointer;
+    transition: all 0.3s ease;
 }
 
-.nav-links a:hover {
+/* Added glow and bold effect for hover and active state */
+.nav-links a:hover, 
+.nav-links a.active-nav {
     color: var(--accent-yellow);
+    font-weight: bold;
+    text-shadow: 0 0 10px rgba(251, 191, 36, 0.8), 0 0 20px rgba(251, 191, 36, 0.4);
 }
 
 #theme-btn {
@@ -175,10 +174,7 @@ section {
     gap: 50px;
 }
 
-.hero-text {
-    flex: 1;
-}
-
+.hero-text { flex: 1; }
 .hero-image {
     flex: 1;
     display: flex;
@@ -187,7 +183,6 @@ section {
     position: relative;
 }
 
-/* Outer glow behind the profile picture */
 .hero-image::before {
     content: '';
     position: absolute;
@@ -204,26 +199,17 @@ section {
     width: 500px;
     height: auto;
     object-fit: contain;
-    
     border-radius: 0;
     border: none;
     box-shadow: none;
-    
-    /* Fade out the bottom of the image */
     -webkit-mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
     mask-image: linear-gradient(to bottom, rgba(0,0,0,1) 60%, rgba(0,0,0,0) 100%);
-    
     position: relative;
     z-index: 1;
 }
 
-.greeting {
-    color: var(--primary-purple);
-}
-
-.hero h1 {
-    font-size: 4rem;
-}
+.greeting { color: var(--primary-purple); }
+.hero h1 { font-size: 4rem; }
 
 /* Scroller Animation */
 .subtitle {
@@ -240,7 +226,7 @@ section {
 .scroller-text {
     display: flex;
     flex-direction: column;
-    animation: scrollText 6s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
+    animation: scrollText 8s cubic-bezier(0.68, -0.55, 0.265, 1.55) infinite;
     color: var(--accent-yellow);
     line-height: 3rem;
 }
@@ -252,10 +238,12 @@ section {
 }
 
 @keyframes scrollText {
-    0%, 25% { transform: translateY(0); }
-    33.33%, 58.33% { transform: translateY(-3rem); }
-    66.66%, 91.66% { transform: translateY(-6rem); }
-    100% { transform: translateY(-9rem); }
+    0%, 16% { transform: translateY(0); }
+    20%, 36% { transform: translateY(-3rem); }
+    40%, 56% { transform: translateY(-6rem); }
+    60%, 76% { transform: translateY(-9rem); }
+    80%, 96% { transform: translateY(-12rem); }
+    100% { transform: translateY(-15rem); }
 }
 
 .description {
@@ -288,9 +276,7 @@ section {
     color: black;
 }
 
-.btn i {
-    margin-right: 8px;
-}
+.btn i { margin-right: 8px; }
 
 .btn-outline {
     border-color: var(--primary-purple);
@@ -311,8 +297,7 @@ section {
     gap: 50px;
 }
 
-.about-text h3,
-.skills-container h3 {
+.about-text h3, .skills-container h3 {
     color: var(--accent-yellow);
     margin-bottom: 20px;
 }
@@ -336,9 +321,7 @@ section {
     width: 100%;
 }
 
-.skill-item {
-    width: 100%;
-}
+.skill-item { width: 100%; }
 
 .skill-info {
     display: flex;
@@ -369,7 +352,7 @@ section {
     height: 100%;
     background: var(--primary-purple);
     border-radius: 10px;
-    width: 0%; /* JS animates this */
+    width: 0%; 
     transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -439,9 +422,7 @@ section {
     font-size: 1.2rem;
 }
 
-.timeline-item p {
-    color: var(--text-muted);
-}
+.timeline-item p { color: var(--text-muted); }
 
 /* =============================
    Projects
@@ -517,7 +498,7 @@ section {
 .cert-image {
     width: 100%;
     height: 140px;
-    object-fit: cover; /* Ensures image fills container nicely */
+    object-fit: cover; 
     border-radius: 10px;
     margin-bottom: 15px;
     border: 1px solid rgba(168, 85, 247, 0.3);
@@ -543,49 +524,88 @@ section {
     font-weight: 600;
 }
 
-.cert-link:hover {
-    text-decoration: underline;
-}
+.cert-link:hover { text-decoration: underline; }
 
 /* =============================
-   Achievements
+   Awards & Blogs Grid
 ============================= */
-.achievement-grid {
+.award-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
-.achievement-card {
-    display: flex;
-    align-items: center;
+.award-card {
     background: var(--card-bg);
-    padding: 25px;
+    padding: 20px;
     border-radius: 15px;
+    text-align: left;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-left: 4px solid var(--accent-yellow);
+    border: 1px solid transparent;
 }
 
-.achievement-card:hover {
+.award-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 10px 20px rgba(251, 191, 36, 0.15);
+    border-color: rgba(251, 191, 36, 0.3);
 }
 
-.achievement-icon {
-    font-size: 2.5rem;
-    color: var(--accent-yellow);
-    margin-right: 30px;
+.award-image {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border: 1px solid rgba(251, 191, 36, 0.1);
 }
 
-.achievement-info h4 {
+.award-card h4 {
     color: var(--text-light);
-    font-size: 1.2rem;
-    margin-bottom: 5px;
+    font-size: 1.15rem;
+    margin-bottom: 10px;
 }
 
-.achievement-info p {
+.award-card p {
     color: var(--text-muted);
-    font-size: 0.95rem;
+    font-size: 0.9rem;
+    margin-bottom: 20px;
+}
+
+.linkedin-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: #0077b5;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.linkedin-tag:hover {
+    background: #005582;
+}
+
+.medium-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 15px;
+    background: #000;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 0.85rem;
+    font-weight: 600;
+    border: 1px solid rgba(255,255,255,0.2);
+    transition: 0.3s;
+}
+
+.medium-tag:hover {
+    background: #333;
 }
 
 /* =============================
@@ -628,9 +648,7 @@ section {
     z-index: 2;
 }
 
-.close-btn:hover {
-    color: var(--accent-yellow);
-}
+.close-btn:hover { color: var(--accent-yellow); }
 
 .modal-content h3 {
     color: var(--primary-purple);
@@ -729,7 +747,7 @@ section {
 }
 
 /* =============================
-   Social
+   Social & Contact
 ============================= */
 .social-links {
     display: flex;
@@ -746,17 +764,9 @@ section {
     border: 1px solid var(--primary-purple);
 }
 
-.social-links a:hover {
-    background: var(--primary-purple);
-}
+.social-links a:hover { background: var(--primary-purple); }
+.social-links i { margin-right: 10px; }
 
-.social-links i {
-    margin-right: 10px;
-}
-
-/* =============================
-   Contact
-============================= */
 .contact-form {
     display: flex;
     flex-direction: column;
@@ -797,9 +807,7 @@ footer {
     gap: 8px;
 }
 
-.visitor-counter i {
-    color: var(--primary-purple);
-}
+.visitor-counter i { color: var(--primary-purple); }
 
 /* =============================
    Animation
@@ -835,20 +843,9 @@ footer {
         flex-direction: column-reverse;
         text-align: center;
     }
-    .hero-btns {
-        justify-content: center;
-    }
-    .about-content {
-        grid-template-columns: 1fr;
-    }
-    .profile-pic {
-        width: 320px;
-        height: auto;
-    }
-    .nav-links {
-        display: none;
-    }
-    .hero h1 {
-        font-size: 3rem;
-    }
+    .hero-btns { justify-content: center; }
+    .about-content { grid-template-columns: 1fr; }
+    .profile-pic { width: 320px; height: auto; }
+    .nav-links { display: none; }
+    .hero h1 { font-size: 3rem; }
 }

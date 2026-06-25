@@ -11,7 +11,7 @@
 
     <!-- Loading Screen -->
     <div id="loader">
-        <h2 class="loader-text">Chelaka Botheju</h2>
+        <h2 class="loader-text">Chelaka Botheju<br></h2>
         <h1 class="Loader-text">Portfolio</h1>
     </div>
 
@@ -23,361 +23,367 @@
     <nav class="navbar">
         <div class="logo">W T N C Botheju</div>
         <ul class="nav-links">
-            <li><a href="#home">Home</a></li>
-            <li><a href="#about">About</a></li>
-            <li><a href="#education">Education</a></li>
-            <li><a href="#projects">Projects</a></li>
-            <li><a href="#social">Social</a></li>
-            <li><a href="#contact">Contact</a></li>
+            <li><a href="#home" class="nav-link scroll-link" data-target="main-view">Home</a></li>
+            <li><a href="#about" class="nav-link scroll-link" data-target="main-view">About</a></li>
+            <li><a href="#projects" class="nav-link scroll-link" data-target="main-view">Projects</a></li>
+            <li><a href="#" class="nav-link view-btn" data-target="cert-awards-view">Certs & Awards</a></li>
+            <li><a href="#" class="nav-link view-btn" data-target="blogs-view">Blogs</a></li>
+            <li><a href="#" class="nav-link view-btn" data-target="memberships-view">Memberships</a></li>
         </ul>
         <button id="theme-btn">🌙</button>
     </nav>
 
-    <!-- Hero -->
-    <section id="home" class="hero fade-in">
-        <div class="hero-container">
-            <div class="hero-text">
-                <p class="greeting">Hello, I'm</p>
-                <h1>W. T. N. Chelaka Botheju</h1>
-                <h2 class="subtitle">
-                    <div class="scroller-container">
-                        <div class="scroller-text">
-                            <span>Undergraduate</span>
-                            <span>Graphic Designer</span>
-                            <span>Full Stack Developer</span>
-                            <span>Undergraduate</span>
+    <!-- ================= MAIN HOME VIEW ================= -->
+    <div id="main-view" class="view-section" style="display: block;">
+        
+        <!-- Hero -->
+        <section id="home" class="hero fade-in">
+            <div class="hero-container">
+                <div class="hero-text">
+                    <p class="greeting">Hello, I'm</p>
+                    <h1>W. T. N. Chelaka Botheju</h1>
+                    <h2 class="subtitle">
+                        <div class="scroller-container">
+                            <div class="scroller-text">
+                                <span>Undergraduate</span>
+                                <span>Graphic Designer</span>
+                                <span>Full Stack Developer</span>
+                                <span>UI/UX Designer</span>
+                                <span>Undergraduate</span>
+                            </div>
                         </div>
+                    </h2>
+                    <p class="description">
+                        I am an undergraduate student passionate about software development and a professional graphic designer since 2020. I enjoy combining creativity with technical skills to build meaningful projects.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#projects" class="btn">Explore My Work</a>
+                        <a href="CV.pdf" download class="btn btn-outline"><i class="fa-solid fa-download"></i> Download CV</a>
                     </div>
-                </h2>
-                <p class="description">
-                    I am an undergraduate student passionate about software development and a professional graphic designer since 2020. I enjoy combining creativity with technical skills to build meaningful projects.
-                </p>
-                <div class="hero-btns">
-                    <a href="#projects" class="btn">Explore My Work</a>
-                    <a href="CV.pdf" download class="btn btn-outline"><i class="fa-solid fa-download"></i> Download CV</a>
+                </div>
+                <div class="hero-image">
+                    <img src="profile.png.png" class="profile-pic">
                 </div>
             </div>
-            <div class="hero-image">
-                <img src="profile.png.png" class="profile-pic">
-            </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- About -->
-    <section id="about" class="fade-in">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-text">
-                <h3>Personal Information</h3>
-                <p>I am a BSc ICT undergraduate at University of Sri Jayewardenepura with interests in software development and creative design.</p>
-                <ul class="education-list">
-                    <li><strong>Location:</strong> Colombo, Sri Lanka</li>
-                    <li><strong>Email:</strong> chelakabotheju@gmail.com</li>
-                    <li><strong>Phone:</strong> 0760497677</li>
-                </ul>
-            </div>
-            <div class="skills-container">
-                <h3>Skills</h3>
-                <div class="skill-bars">
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span><i class="fa-brands fa-html5"></i> HTML / CSS</span>
-                            <span>90%</span>
+        <!-- About -->
+        <section id="about" class="fade-in">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Personal Information</h3>
+                    <p>I am a BSc ICT undergraduate at University of Sri Jayewardenepura with interests in software development and creative design.</p>
+                    <ul class="education-list">
+                        <li><strong>Location:</strong> Colombo, Sri Lanka</li>
+                        <li><strong>Email:</strong> chelakabotheju@gmail.com</li>
+                        <li><strong>Phone:</strong> 0760497677</li>
+                    </ul>
+                </div>
+                <div class="skills-container">
+                    <h3>Skills</h3>
+                    <div class="skill-bars">
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span><i class="fa-brands fa-html5"></i> HTML / CSS</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-line" data-percent="90%"><span></span></div>
                         </div>
-                        <div class="progress-line" data-percent="90%">
-                            <span></span>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span><i class="fa-brands fa-js"></i> JavaScript</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-line" data-percent="80%"><span></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span><i class="fa-brands fa-java"></i> Java</span>
+                                <span>75%</span>
+                            </div>
+                            <div class="progress-line" data-percent="75%"><span></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span><i class="fa-brands fa-python"></i> Python</span>
+                                <span>70%</span>
+                            </div>
+                            <div class="progress-line" data-percent="70%"><span></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span><i class="fa-solid fa-database"></i> SQL</span>
+                                <span>80%</span>
+                            </div>
+                            <div class="progress-line" data-percent="80%"><span></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span><i class="fa-brands fa-git-alt"></i> Git</span>
+                                <span>85%</span>
+                            </div>
+                            <div class="progress-line" data-percent="85%"><span></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span><i class="fa-brands fa-figma"></i> Figma</span>
+                                <span>90%</span>
+                            </div>
+                            <div class="progress-line" data-percent="90%"><span></span></div>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-info">
+                                <span><i class="fa-solid fa-pen-ruler"></i> Photoshop</span>
+                                <span>95%</span>
+                            </div>
+                            <div class="progress-line" data-percent="95%"><span></span></div>
                         </div>
                     </div>
+                </div>
+            </div>
+        </section>
 
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span><i class="fa-brands fa-js"></i> JavaScript</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="progress-line" data-percent="80%">
-                            <span></span>
-                        </div>
+        <!-- Education -->
+        <section id="education" class="fade-in">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <span class="timeline-date">2025 - present</span>
+                    <h3>University of Sri Jayewardenepura</h3>
+                    <p>BSc. in ICT</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2024 - 2025</span>
+                    <h3>Britishway English Academy</h3>
+                    <p>Spoken English Diploma</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2016 - 2023</span>
+                    <h3>St' Aloysius College Ratnapura</h3>
+                    <p>O/Ls and A/Ls</p>
+                </div>
+                <div class="timeline-item">
+                    <span class="timeline-date">2009 - 2015</span>
+                    <h3>Royal College Ratnapura</h3>
+                    <p>Primary Education</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects -->
+        <section id="projects" class="fade-in">
+            <h2 class="section-title">My Projects</h2>
+            <div class="project-grid">
+                <div class="project-card" onclick="openModal('project1')">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-image fa-3x"></i>
                     </div>
-
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span><i class="fa-brands fa-java"></i> Java</span>
-                            <span>75%</span>
-                        </div>
-                        <div class="progress-line" data-percent="75%">
-                            <span></span>
-                        </div>
+                    <h3>Project 1</h3>
+                    <p>Sample project description. Click to view more details and screenshots.</p>
+                    <div class="skill-tags" style="margin-top: 15px;">
+                        <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">HTML</span>
+                        <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">CSS</span>
                     </div>
-
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span><i class="fa-brands fa-python"></i> Python</span>
-                            <span>70%</span>
-                        </div>
-                        <div class="progress-line" data-percent="70%">
-                            <span></span>
-                        </div>
+                </div>
+                <div class="project-card" onclick="openModal('project2')">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-image fa-3x"></i>
                     </div>
-
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span><i class="fa-solid fa-database"></i> SQL</span>
-                            <span>80%</span>
-                        </div>
-                        <div class="progress-line" data-percent="80%">
-                            <span></span>
-                        </div>
+                    <h3>Project 2</h3>
+                    <p>Sample project description. Click to view more details and screenshots.</p>
+                    <div class="skill-tags" style="margin-top: 15px;">
+                        <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">Java</span>
+                        <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">SQL</span>
                     </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span><i class="fa-brands fa-git-alt"></i> Git</span>
-                            <span>85%</span>
-                        </div>
-                        <div class="progress-line" data-percent="85%">
-                            <span></span>
-                        </div>
+                </div>
+                <div class="project-card" onclick="openModal('project3')">
+                    <div class="card-image-placeholder">
+                        <i class="fa-solid fa-image fa-3x"></i>
                     </div>
-
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span><i class="fa-brands fa-figma"></i> Figma</span>
-                            <span>90%</span>
-                        </div>
-                        <div class="progress-line" data-percent="90%">
-                            <span></span>
-                        </div>
+                    <h3>Project 3</h3>
+                    <p>Sample project description. Click to view more details and screenshots.</p>
+                    <div class="skill-tags" style="margin-top: 15px;">
+                        <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">Figma</span>
+                        <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">Photoshop</span>
                     </div>
-                    
-                    <div class="skill-item">
-                        <div class="skill-info">
-                            <span><i class="fa-solid fa-pen-ruler"></i> Photoshop</span>
-                            <span>95%</span>
-                        </div>
-                        <div class="progress-line" data-percent="95%">
-                            <span></span>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Education -->
-    <section id="education" class="fade-in">
-        <h2 class="section-title">Education</h2>
-        <div class="timeline">
-            
-            <div class="timeline-item">
-                <span class="timeline-date">2025 - present</span>
-                <h3>University of Sri Jayewardenepura</h3>
-                <p>BSc. in ICT</p>
+        <!-- Social -->
+        <section id="social" class="fade-in">
+            <h2 class="section-title">Connect With Me</h2>
+            <div class="social-links">
+                <a href="https://github.com/chelo-chelo" target="_blank"><i class="fa-brands fa-github"></i> GitHub</a>
+                <a href="https://www.linkedin.com/in/chelaka-botheju-6417601a7" target="_blank"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
+                <a href="https://www.instagram.com/chelo_x18" target="_blank"><i class="fa-brands fa-instagram"></i> Instagram</a>
             </div>
+        </section>
 
-            <div class="timeline-item">
-                <span class="timeline-date">2024 - 2025</span>
-                <h3>Britishway English Academy</h3>
-                <p>Spoken English Diploma</p>
-            </div>
+        <!-- Contact -->
+        <section id="contact" class="fade-in">
+            <h2 class="section-title">Contact Me</h2>
+            <form class="contact-form" id="contact-form">
+                <input type="text" name="user_name" id="user_name" placeholder="Your Name" required>
+                <input type="email" name="user_email" id="user_email" placeholder="Your Email" required>
+                <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
+                <button type="submit" class="btn" id="submit-btn">Send Message</button>
+            </form>
+            <div id="form-status" style="text-align: center; margin-top: 15px; font-weight: bold;"></div>
+        </section>
 
-            <div class="timeline-item">
-                <span class="timeline-date">2016 - 2023</span>
-                <h3>St' Aloysius College Ratnapura</h3>
-                <p>O/Ls and A/Ls</p>
-            </div>
+    </div> <!-- End Main View -->
 
-            <div class="timeline-item">
-                <span class="timeline-date">2009 - 2015</span>
-                <h3>Royal College Ratnapura</h3>
-                <p>Primary Education</p>
-            </div>
 
-        </div>
-    </section>
-
-    <!-- Projects -->
-    <section id="projects" class="fade-in">
-        <h2 class="section-title">My Projects</h2>
-        <div class="project-grid">
-            
-            <div class="project-card" onclick="openModal('project1')">
-                <div class="card-image-placeholder">
-                    <i class="fa-solid fa-image fa-3x"></i>
+    <!-- ================= CERTS & AWARDS VIEW ================= -->
+    <div id="cert-awards-view" class="view-section" style="display: none;">
+        
+        <!-- Certificates -->
+        <section id="certificates" class="fade-in" style="min-height: auto; padding-bottom: 2rem;">
+            <h2 class="section-title">Certifications</h2>
+            <div class="cert-grid">
+                <div class="cert-card">
+                    <img src="Cetificates/cert1.jpeg" alt="Certificate 1" class="cert-image">
+                    <h4>Winner | All Island Graphic Design Competition 2025</h4>
+                    <p>Jpura Voice</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
-                <h3>Project 1</h3>
-                <p>Sample project description. Click to view more details and screenshots.</p>
-                <div class="skill-tags" style="margin-top: 15px;">
-                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">HTML</span>
-                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">CSS</span>
+                <div class="cert-card">
+                    <img src="Cetificates/cert2.jpeg" alt="Certificate 2" class="cert-image">
+                    <h4>Certificate of Participation | Delancey Christmas Flyer Competition 2022</h4>
+                    <p>Rotaract Ratnapura</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="cert-card">
+                    <img src="Cetificates/cert3.jpeg" alt="Certificate 3" class="cert-image">
+                    <h4>Honour Pass | Advanced Certificate in Spoken English</h4>
+                    <p>British Way English Academy</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="cert-card">
+                    <img src="Cetificates/cert4.jpeg" alt="Certificate 4" class="cert-image">
+                    <h4>Distinction Pass | A1 Spoken English Examination</h4>
+                    <p>U.S. English Academy</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="cert-card">
+                    <img src="Cetificates/cert5.jpeg" alt="Certificate 5" class="cert-image">
+                    <h4>Distinction Pass | A2 Spoken English Examination</h4>
+                    <p>U.S. English Academy</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="cert-card">
+                    <img src="Cetificates/cert6.jpeg" alt="Certificate 6" class="cert-image">
+                    <h4>Certificate of Participation | Vesak AI Flyer Competition 2022</h4>
+                    <p>Sabaragamuwa Provintial Department of Education</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="cert-card">
+                    <img src="Cetificates/cert7.jpeg" alt="Certificate 7" class="cert-image">
+                    <h4>Certificate of Appreciation | Graphic Designer of Sri Lanka University Games 2025</h4>
+                    <p>J'Pura Flames</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="cert-card">
+                    <img src="Cetificates/cert8.jpeg" alt="Certificate 8" class="cert-image">
+                    <h4>Certificate of Appreciation | Graphic Designer of Heenayate Saviyak 2.0</h4>
+                    <p>IEEE Student branch of University of Sri Jayawardenepura</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="cert-card">
+                    <img src="Cetificates/cert9.jpeg" alt="Certificate 9" class="cert-image">
+                    <h4>Certificate of Appreciation | Graphic Designer of J'PuraXtreme 2.0</h4>
+                    <p>CS Chapter | IEEE student branch of University of Sri Jayawardenepura</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
+                </div>
+                <div class="cert-card">
+                    <img src="Cetificates/cert10.jpeg" alt="Certificate 10" class="cert-image">
+                    <h4>Certificate of Participation | IEEE Digital Vesak Art Competition 2026</h4>
+                    <p>IEEE Student branch of Sabaragamuwa University of Sri Lanka</p>
+                    <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
                 </div>
             </div>
+        </section>
 
-            <div class="project-card" onclick="openModal('project2')">
-                <div class="card-image-placeholder">
-                    <i class="fa-solid fa-image fa-3x"></i>
-                </div>
-                <h3>Project 2</h3>
-                <p>Sample project description. Click to view more details and screenshots.</p>
-                <div class="skill-tags" style="margin-top: 15px;">
-                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">Java</span>
-                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">SQL</span>
-                </div>
-            </div>
-
-            <div class="project-card" onclick="openModal('project3')">
-                <div class="card-image-placeholder">
-                    <i class="fa-solid fa-image fa-3x"></i>
-                </div>
-                <h3>Project 3</h3>
-                <p>Sample project description. Click to view more details and screenshots.</p>
-                <div class="skill-tags" style="margin-top: 15px;">
-                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">Figma</span>
-                    <span class="skill-tag" style="padding: 5px 10px; font-size: 0.8rem;">Photoshop</span>
-                </div>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Certificates -->
-    <section id="certificates" class="fade-in">
-        <h2 class="section-title">Certifications</h2>
-        <div class="cert-grid">
-            
-            <div class="cert-card">
-                <img src="Cetificates/cert1.jpeg" alt="Certificate 1" class="cert-image">
-                <h4>Winner | All Island Graphic Design Competition 2025</h4>
-                <p>Jpura Voice</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Cetificates/cert2.jpeg" alt="Certificate 2" class="cert-image">
-                <h4>Certificate of Participation | Delancey Christmas Flyer Competition 2022</h4>
-                <p>Rotaract Ratnapura</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Cetificates/cert3.jpeg" alt="Certificate 3" class="cert-image">
-                <h4>Honour Pass | Advanced Certificate in Spoken English</h4>
-                <p>British Way English Academy</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Cetificates/cert4.jpeg" alt="Certificate 4" class="cert-image">
-                <h4>Distinction Pass | A1 Spoken English Examination</h4>
-                <p>U.S. English Academy</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Cetificates/cert5.jpeg" alt="Certificate 5" class="cert-image">
-                <h4>Distinction Pass | A2 Spoken English Examination</h4>
-                <p>U.S. English Academy</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Cetificates/cert6.jpeg" alt="Certificate 6" class="cert-image">
-                <h4>Certificate of Participation | Vesak AI Flyer Competition 2022</h4>
-                <p>Sabaragamuwa Provintial Department of Education</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Cetificates/cert7.jpeg" alt="Certificate 7" class="cert-image">
-                <h4>Certificate of Appreciation | Graphic Designer of Sri Lanka University Games 2025</h4>
-                <p>J'Pura Flames</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Cetificates/cert8.jpeg" alt="Certificate 8" class="cert-image">
-                <h4>Certificate of Appreciation | Graphic Designer of Heenayate Saviyak 2.0</h4>
-                <p>IEEE Student branch of University of Sri Jayawardenepura</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Cetificates/cert9.jpeg" alt="Certificate 9" class="cert-image">
-                <h4>Certificate of Appreciation | Graphic Designer of J'PuraXtreme 2.0</h4>
-                <p>CS Chapter | IEEE student branch of University of Sri Jayawardenepura</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-            <div class="cert-card">
-                <img src="Cetificates/cert10.jpeg" alt="Certificate 10" class="cert-image">
-                <h4>Certificate of Participation | IEEE Digital Vesak Art Competition 2026</h4>
-                <p>IEEE Student branch of Sabaragamuwa University of Sri Lanka</p>
-                <a href="#" class="cert-link">View Credential <i class="fa-solid fa-arrow-up-right-from-square"></i></a>
-            </div>
-
-        </div>
-    </section>
-
-    <!-- Achievements -->
-    <section id="achievements" class="fade-in">
-        <h2 class="section-title">Achievements</h2>
-        <div class="achievement-grid">
-            
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fa-solid fa-trophy"></i>
-                </div>
-                <div class="achievement-info">
+        <!-- Achievements -->
+        <section id="achievements" class="fade-in" style="min-height: auto; padding-top: 4rem;">
+            <h2 class="section-title">Achievements and Awards</h2>
+            <div class="award-grid">
+                
+                <div class="award-card">
+                    <img src="award-placeholder.jpg" alt="Award 1" class="award-image">
                     <h4>Achievement Title 1</h4>
-                    <p>Brief description of the achievement, competition, or recognition.</p>
+                    <p>Brief description of the achievement, competition, or recognition highlighting your success.</p>
+                    <a href="#" target="_blank" class="linkedin-tag"><i class="fa-brands fa-linkedin"></i> View on LinkedIn</a>
                 </div>
-            </div>
 
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fa-solid fa-medal"></i>
-                </div>
-                <div class="achievement-info">
+                <div class="award-card">
+                    <img src="award-placeholder.jpg" alt="Award 2" class="award-image">
                     <h4>Achievement Title 2</h4>
-                    <p>Brief description of the achievement, competition, or recognition.</p>
+                    <p>Brief description of the achievement, competition, or recognition highlighting your success.</p>
+                    <a href="#" target="_blank" class="linkedin-tag"><i class="fa-brands fa-linkedin"></i> View on LinkedIn</a>
                 </div>
-            </div>
 
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fa-solid fa-star"></i>
-                </div>
-                <div class="achievement-info">
+                <div class="award-card">
+                    <img src="award-placeholder.jpg" alt="Award 3" class="award-image">
                     <h4>Achievement Title 3</h4>
-                    <p>Brief description of the achievement, competition, or recognition.</p>
+                    <p>Brief description of the achievement, competition, or recognition highlighting your success.</p>
+                    <a href="#" target="_blank" class="linkedin-tag"><i class="fa-brands fa-linkedin"></i> View on LinkedIn</a>
                 </div>
-            </div>
 
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fa-solid fa-award"></i>
-                </div>
-                <div class="achievement-info">
+                <div class="award-card">
+                    <img src="award-placeholder.jpg" alt="Award 4" class="award-image">
                     <h4>Achievement Title 4</h4>
-                    <p>Brief description of the achievement, competition, or recognition.</p>
+                    <p>Brief description of the achievement, competition, or recognition highlighting your success.</p>
+                    <a href="#" target="_blank" class="linkedin-tag"><i class="fa-brands fa-linkedin"></i> View on LinkedIn</a>
                 </div>
-            </div>
 
-            <div class="achievement-card">
-                <div class="achievement-icon">
-                    <i class="fa-solid fa-crown"></i>
-                </div>
-                <div class="achievement-info">
-                    <h4>Achievement Title 5</h4>
-                    <p>Brief description of the achievement, competition, or recognition.</p>
-                </div>
             </div>
+        </section>
 
+    </div> <!-- End Certs & Awards View -->
+
+
+    <!-- ================= BLOGS & ARTICLES VIEW ================= -->
+    <div id="blogs-view" class="view-section" style="display: none;">
+        <section id="blogs" class="fade-in">
+            <h2 class="section-title">Blogs & Articles</h2>
+            <div class="award-grid">
+                
+                <div class="award-card">
+                    <img src="blog-placeholder.jpg" alt="Blog 1" class="award-image">
+                    <h4>Understanding UI/UX Design Trends</h4>
+                    <p>An in-depth article exploring the latest design patterns, user experience fundamentals, and creative aesthetics for modern web applications.</p>
+                    <a href="#" target="_blank" class="medium-tag"><i class="fa-brands fa-medium"></i> Read on Medium</a>
+                </div>
+
+            </div>
+        </section>
+    </div> <!-- End Blogs View -->
+
+
+    <!-- ================= MEMBERSHIPS & SOCIETIES VIEW ================= -->
+    <div id="memberships-view" class="view-section" style="display: none;">
+        <section id="memberships" class="fade-in">
+            <h2 class="section-title">Memberships & Societies</h2>
+            <div style="text-align: center; margin-top: 50px;">
+                <p style="color: var(--text-muted); font-size: 1.2rem;">Content coming soon...</p>
+                <i class="fa-solid fa-users fa-4x" style="color: rgba(168, 85, 247, 0.3); margin-top: 20px;"></i>
+            </div>
+        </section>
+    </div> <!-- End Memberships View -->
+
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2026 Chelaka Botheju Portfolio</p>
+        <div class="visitor-counter">
+            <i class="fa-solid fa-eye"></i> Visitors: <span id="visitor-count">...</span>
         </div>
-    </section>
+    </footer>
 
-    <!-- Modal for Slideshow -->
+    <!-- Modals -->
     <div id="project-modal" class="modal">
         <div class="modal-content">
             <span class="close-btn" onclick="closeModal()">&times;</span>
@@ -412,36 +418,7 @@
         </div>
     </div>
 
-    <!-- Social -->
-    <section id="social" class="fade-in">
-        <h2 class="section-title">Connect With Me</h2>
-        <div class="social-links">
-            <a href="https://github.com/chelo-chelo"><i class="fa-brands fa-github"></i> GitHub</a>
-            <a href="https://www.linkedin.com/in/chelaka-botheju-6417601a7"><i class="fa-brands fa-linkedin"></i> LinkedIn</a>
-            <a href="https://www.instagram.com/chelo_x18"><i class="fa-brands fa-instagram"></i> Instagram</a>
-        </div>
-    </section>
-
-    <!-- Contact -->
-    <section id="contact" class="fade-in">
-        <h2 class="section-title">Contact Me</h2>
-        <form class="contact-form" id="contact-form">
-            <input type="text" name="user_name" id="user_name" placeholder="Your Name" required>
-            <input type="email" name="user_email" id="user_email" placeholder="Your Email" required>
-            <textarea name="message" id="message" rows="5" placeholder="Your Message" required></textarea>
-            <button type="submit" class="btn" id="submit-btn">Send Message</button>
-        </form>
-        <div id="form-status" style="text-align: center; margin-top: 15px; font-weight: bold;"></div>
-    </section>
-
-    <footer>
-        <p>© 2026 Chelaka Botheju Portfolio</p>
-        <div class="visitor-counter">
-            <i class="fa-solid fa-eye"></i> Visitors: <span id="visitor-count">...</span>
-        </div>
-    </footer>
-
-    <!-- EmailJS Script -->
+    <!-- Scripts -->
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="script.js"></script>
 </body>
