@@ -137,7 +137,7 @@ section {
 
 .nav-links {
     display: flex;
-    gap: 20px; /* Reduced slightly to fit all items perfectly */
+    gap: 20px;
     list-style: none;
 }
 
@@ -322,7 +322,7 @@ section {
 }
 
 /* =============================
-   Skills (New Grid Layout)
+   Skills Grid Layout
 ============================= */
 .skills-grid {
     display: grid;
@@ -833,6 +833,37 @@ footer {
     --text-muted: #555;
     --card-bg: rgba(0,0,0,.05);
     --nav-bg: rgba(255,255,255,.9);
+}
+
+/* =============================
+   Project Status Tags
+============================= */
+
+.project-status{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:6px 14px;
+    margin-bottom:15px;
+    border-radius:20px;
+    font-size:0.85rem;
+    font-weight:600;
+}
+
+.project-status.completed{
+    background:rgba(34,197,94,0.15);
+    color:#4ade80;
+    border:1px solid rgba(34,197,94,0.3);
+}
+
+.project-status.ongoing{
+    background:rgba(251,191,36,0.15);
+    color:#fbbf24;
+    border:1px solid rgba(251,191,36,0.3);
+}
+
+.project-status i{
+    font-size:0.9rem;
 }
 
 /* =============================

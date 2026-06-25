@@ -145,113 +145,206 @@ if(themeBtn) {
 // =============================
 const projectsData = {
     project1: {
-        title: "Project 1",
-        desc: "Sample project description for Project 1.",
-        github: "#",
-        live: "#"
+        title: "Island Flavours Restaurant Management System (OOP Based POS System)",
+        desc: "The Island Flavors Restaurant Management System is a desktop-based application developed using Java Swing and MySQL. The system is designed to manage restaurant operations such as menu management, customer handling, and order processing. It provides a user-friendly interface for the administrator and includes features such as invoice generation and exporting invoices.",
+        github: "https://github.com/chelo-chelo/Island-Flavours-Resturant-Management-System.git",
+        Report: "Projects/1/Report.pdf",
+        magazine: "#",
+        web: "#",
+        images: [
+            "Projects/1/1.png",
+            "Projects/1/2.png",
+            "Projects/1/3.png"
+        ]
     },
+
     project2: {
-        title: "Project 2",
-        desc: "Sample project description for Project 2.",
+        title: "Roamly - Travel Planning Platform",
+        desc: "Roamly is a community-driven travel discovery and local listing platform designed to bridge the gap between travellers seeking destination information and local businesses offering services within those destinations. Built initially for Sri Lanka, one of Asia's most diverse and rapidly growing tourism markets, Roamly is architected for global scalability.",
         github: "#",
-        live: "#"
+        Report: "Projects/2/Report.pdf",
+        magazine: "#",
+        web: "#",
+        images: [
+            "Projects/2/1.png",
+            "Projects/2/2.png",
+            "Projects/2/3.png"
+        ]
     },
+
     project3: {
-        title: "Project 3",
-        desc: "Sample project description for Project 3.",
+        title: "Eunoia - Health & Wellness Platform",
+        desc: "Proud to contribute as part of the Flyer Designing Crew in the Organizing Committee of this initiative, organized by the Leo Club of USJ. This project brought together 8 Leo Clubs from different countries, showcasing the power of collaboration and creativity. I’m especially excited to have contributed to the launch of the EunoiaHub website and the digital magazine.",
         github: "#",
-        live: "#"
+        Report: "#",
+        magazine: "https://online.anyflip.com/bhfnn/hiur/mobile/index.html?fbclid=IwY2xjawSp7q9leHRuA2FlbQIxMABicmlkETFob3lsYzFYMUpHblZsUEpKc3J0YwZhcHBfaWQQMjIyMDM5MTc4ODIwMDg5MgABHtRdoYQUbNhdODPFsB1tkNEScRXceIDjdQG3bIWlqNEKk350mnVYbS_qVUS8_aem_qlN1rL8M41tLIJSvbsSBYA",
+        web: "https://eunoiahub.online/",
+        images: [
+            "Projects/3/1.jpg",
+            "Projects/3/2.jpg",
+            "Projects/3/3.jpg"
+        ]
     }
 };
 
 const modal = document.getElementById("project-modal");
+const modalTitle = document.getElementById("modal-title");
+const modalDesc = document.getElementById("modal-desc");
+const modalGithub = document.getElementById("modal-github");
+const modalLive = document.getElementById("modal-live");
+const modalMagazine = document.getElementById("modal-magazine");
+const modalWeb = document.getElementById("modal-web");
+
+const slidesContainer = document.querySelector(".slideshow-container");
+const dotsContainer = document.querySelector(".modal-content > div[style*='text-align:center']");
+
+let slideIndex = 1;
 
 function openModal(projectId) {
-    if (!modal) return;
     const data = projectsData[projectId];
-    document.getElementById("modal-title").innerText = data.title;
-    document.getElementById("modal-desc").innerText = data.desc;
-    document.getElementById("modal-github").href = data.github;
-    document.getElementById("modal-live").href = data.live;
+    if (!data) return;
+
+    modalTitle.textContent = data.title;
+    modalDesc.textContent = data.desc;
     
+    if(data.github !== "#") {
+        modalGithub.style.display = "inline-flex";
+        modalGithub.href = data.github;
+    } else {
+        modalGithub.style.display = "none";
+    }
+
+    if(data.Report !== "#") {
+        modalLive.style.display = "inline-flex";
+        modalLive.href = data.Report;
+    } else {
+        modalLive.style.display = "none";
+    }
+
+    if(data.magazine !== "#") {
+        modalMagazine.style.display = "inline-flex";
+        modalMagazine.href = data.magazine;
+    } else {
+        modalMagazine.style.display = "none";
+    }
+
+    if(data.web !== "#") {
+        modalWeb.style.display = "inline-flex";
+        modalWeb.href = data.web;
+    } else {
+        modalWeb.style.display = "none";
+    }
+
+    // Populate images
+    slidesContainer.innerHTML = "";
+    dotsContainer.innerHTML = "";
+    
+    data.images.forEach((imgSrc, index) => {
+        // Slide
+        const slide = document.createElement("div");
+        slide.className = "slide fade";
+        slide.innerHTML = `<img src="${imgSrc}" alt="Screenshot ${index + 1}" style="width: 100%; height: 350px; object-fit: cover; border-radius: 10px;">`;
+        slidesContainer.appendChild(slide);
+
+        // Dot
+        const dot = document.createElement("span");
+        dot.className = "dot";
+        dot.onclick = () => currentSlide(index + 1);
+        dotsContainer.appendChild(dot);
+    });
+
+    // Add prev/next buttons back
+    slidesContainer.innerHTML += `
+        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    `;
+
     modal.style.display = "block";
     slideIndex = 1;
     showSlides(slideIndex);
 }
 
 function closeModal() {
-    if (modal) modal.style.display = "none";
+    modal.style.display = "none";
 }
 
+// Close modal when clicking outside of it
 window.onclick = function(event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
 }
 
-let slideIndex = 1;
-function plusSlides(n) { showSlides(slideIndex += n); }
-function currentSlide(n) { showSlides(slideIndex = n); }
+// Slideshow Controls
+function plusSlides(n) {
+    showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+    showSlides(slideIndex = n);
+}
+
 function showSlides(n) {
     let i;
     let slides = document.getElementsByClassName("slide");
     let dots = document.getElementsByClassName("dot");
+    
+    if (slides.length === 0) return;
+    
     if (n > slides.length) {slideIndex = 1}    
     if (n < 1) {slideIndex = slides.length}
+    
     for (i = 0; i < slides.length; i++) {
         slides[i].style.display = "none";  
     }
     for (i = 0; i < dots.length; i++) {
         dots[i].className = dots[i].className.replace(" active", "");
     }
-    if(slides[slideIndex-1]) slides[slideIndex-1].style.display = "block";  
-    if(dots[slideIndex-1]) dots[slideIndex-1].className += " active";
-}
-
-// =============================
-// Visitor Counter API
-// =============================
-const visitorCountEl = document.getElementById("visitor-count");
-if (visitorCountEl) {
-    fetch("https://api.counterapi.dev/v1/chelaka_portfolio/visits/up")
-        .then(res => res.json())
-        .then(data => { visitorCountEl.innerText = data.count; })
-        .catch(err => { visitorCountEl.innerText = "1,000+"; });
-}
-
-// =============================
-// EmailJS Contact Form Setup
-// =============================
-if (typeof emailjs !== "undefined") {
-    emailjs.init("-_8t8FDbj3nwn4V57L");
-
-    const contactForm = document.getElementById("contact-form");
-    const formStatus = document.getElementById("form-status");
-    const submitBtn = document.getElementById("submit-btn");
-
-    if (contactForm) {
-        contactForm.addEventListener("submit", function(event) {
-            event.preventDefault(); 
-
-            const originalBtnText = submitBtn.innerText;
-            submitBtn.innerText = "Sending...";
-            submitBtn.disabled = true;
-
-            emailjs.sendForm('service_ord3caa', 'template_sh8kuva', this)
-                .then(() => {
-                    formStatus.style.color = "#4ade80"; 
-                    formStatus.innerText = "Message sent successfully!";
-                    contactForm.reset();
-                }, (error) => {
-                    formStatus.style.color = "#f87171"; 
-                    formStatus.innerText = "Failed to send message. Please try again.";
-                    console.error("EmailJS Error:", error);
-                })
-                .finally(() => {
-                    submitBtn.innerText = originalBtnText;
-                    submitBtn.disabled = false;
-                    setTimeout(() => { formStatus.innerText = ""; }, 5000);
-                });
-        });
+    
+    slides[slideIndex-1].style.display = "block";  
+    if(dots.length > 0) {
+        dots[slideIndex-1].className += " active";
     }
+}
+
+// =============================
+// EmailJS Contact Form
+// =============================
+const contactForm = document.getElementById("contact-form");
+const submitBtn = document.getElementById("submit-btn");
+const formStatus = document.getElementById("form-status");
+
+if(contactForm) {
+    // IMPORTANT: Make sure to initialize EmailJS with your Public Key in a <script> tag in HTML
+    // emailjs.init("YOUR_PUBLIC_KEY");
+    
+    contactForm.addEventListener("submit", function(e) {
+        e.preventDefault();
+        
+        submitBtn.innerHTML = "Sending...";
+        submitBtn.disabled = true;
+        
+        // Replace with your actual Service ID and Template ID
+        const serviceID = "YOUR_SERVICE_ID"; 
+        const templateID = "YOUR_TEMPLATE_ID";
+
+        emailjs.sendForm(serviceID, templateID, this)
+            .then(() => {
+                formStatus.style.color = "#4ade80"; // Green color
+                formStatus.innerText = "Message sent successfully!";
+                contactForm.reset();
+                submitBtn.innerHTML = "Send Message";
+                submitBtn.disabled = false;
+                
+                setTimeout(() => {
+                    formStatus.innerText = "";
+                }, 5000);
+            }, (err) => {
+                formStatus.style.color = "#f87171"; // Red color
+                formStatus.innerText = "Failed to send message. Please try again.";
+                console.error("EmailJS Error:", err);
+                submitBtn.innerHTML = "Send Message";
+                submitBtn.disabled = false;
+            });
+    });
 }
