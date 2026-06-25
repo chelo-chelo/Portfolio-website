@@ -747,7 +747,7 @@ section {
 }
 
 /* =============================
-   Social & Contact
+   Social & Contact Buttons
 ============================= */
 .social-links {
     display: flex;
@@ -756,30 +756,178 @@ section {
     flex-wrap: wrap;
 }
 
-.social-links a {
+.social-links a.social-btn {
+    display: inline-flex;
+    align-items: center;
     text-decoration: none;
-    color: var(--text-light);
-    padding: 12px 20px;
+    padding: 12px 25px;
     border-radius: 30px;
-    border: 1px solid var(--primary-purple);
+    font-weight: 600;
+    transition: all 0.3s ease;
+    color: var(--text-light);
+    border: 1px solid transparent;
+    background: var(--card-bg);
 }
 
-.social-links a:hover { background: var(--primary-purple); }
-.social-links i { margin-right: 10px; }
+.social-links a.social-btn i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+    transition: all 0.3s ease;
+}
+
+/* --- GitHub Branding --- */
+.social-links a.github {
+    border-color: rgba(255, 255, 255, 0.2);
+}
+.social-links a.github i {
+    color: #ffffff;
+}
+.social-links a.github:hover {
+    background: #ffffff;
+    color: #000000;
+    box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
+}
+.social-links a.github:hover i {
+    color: #000000;
+}
+
+/* --- LinkedIn Branding --- */
+.social-links a.linkedin {
+    border-color: rgba(0, 119, 181, 0.3);
+}
+.social-links a.linkedin i {
+    color: #0077b5;
+}
+.social-links a.linkedin:hover {
+    background: #0077b5;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 119, 181, 0.4);
+}
+.social-links a.linkedin:hover i {
+    color: #ffffff;
+}
+
+/* --- Instagram Branding (Gradient) --- */
+.social-links a.instagram {
+    border-color: rgba(225, 48, 108, 0.3);
+}
+.social-links a.instagram i {
+    background: -webkit-linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+.social-links a.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(225, 48, 108, 0.4);
+    border-color: transparent;
+}
+.social-links a.instagram:hover i {
+    background: none;
+    -webkit-text-fill-color: #ffffff;
+}
+
+/* --- Email (Gmail) Branding --- */
+.social-links a.email {
+    border-color: rgba(234, 67, 53, 0.3);
+}
+.social-links a.email i {
+    color: #ea4335;
+}
+.social-links a.email:hover {
+    background: #ea4335;
+    color: #ffffff;
+    box-shadow: 0 0 15px rgba(234, 67, 53, 0.4);
+}
+.social-links a.email:hover i {
+    color: #ffffff;
+}
+
+/* --- Light Theme Overrides (For GitHub Button) --- */
+body.light-theme .social-links a.github {
+    border-color: rgba(0, 0, 0, 0.2);
+    color: #000000;
+}
+body.light-theme .social-links a.github i {
+    color: #000000;
+}
+body.light-theme .social-links a.github:hover {
+    background: #000000;
+    color: #ffffff;
+}
+body.light-theme .social-links a.github:hover i {
+    color: #ffffff;
+}
+
+/* =============================
+   Contact Form Styles
+============================= */
+#contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centers the section content */
+}
 
 .contact-form {
     display: flex;
     flex-direction: column;
     gap: 20px;
+    width: 100%;
+    max-width: 600px; /* Prevents the form from stretching too wide on PC */
+    margin: 0 auto;
 }
 
 .contact-form input,
 .contact-form textarea {
-    padding: 15px;
-    border: none;
-    border-radius: 10px;
+    width: 100%;
+    padding: 15px 20px;
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 12px;
     background: var(--card-bg);
-    color: white;
+    color: var(--text-light);
+    font-size: 1rem;
+    outline: none;
+    transition: all 0.3s ease;
+    font-family: inherit;
+}
+
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: var(--text-muted);
+}
+
+/* Glow effect when user clicks inside the input/textarea */
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--primary-purple);
+    box-shadow: 0 0 15px rgba(168, 85, 247, 0.2);
+    background: rgba(168, 85, 247, 0.05);
+}
+
+.contact-form textarea {
+    resize: vertical; /* Allows user to drag the height, but not the width */
+    min-height: 150px;
+}
+
+.contact-form button {
+    cursor: pointer;
+    align-self: center; /* Centers the button instead of stretching it */
+    padding: 15px 40px;
+    font-size: 1.1rem;
+}
+
+/* --- Light Theme Support for Form --- */
+body.light-theme .contact-form input,
+body.light-theme .contact-form textarea {
+    color: #111;
+    border-color: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.02);
+}
+
+body.light-theme .contact-form input:focus,
+body.light-theme .contact-form textarea:focus {
+    border-color: var(--primary-purple);
+    background: #ffffff;
 }
 
 /* =============================
