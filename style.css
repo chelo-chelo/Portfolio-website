@@ -137,7 +137,7 @@ section {
 
 .nav-links {
     display: flex;
-    gap: 30px;
+    gap: 20px; /* Reduced slightly to fit all items perfectly */
     list-style: none;
 }
 
@@ -148,7 +148,6 @@ section {
     transition: all 0.3s ease;
 }
 
-/* Added glow and bold effect for hover and active state */
 .nav-links a:hover, 
 .nav-links a.active-nav {
     color: var(--accent-yellow);
@@ -291,69 +290,76 @@ section {
 /* =============================
    About
 ============================= */
-.about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 50px;
+.centered-about {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
-.about-text h3, .skills-container h3 {
+.centered-about p {
+    font-size: 1.1rem;
+    color: var(--text-muted);
+}
+
+.centered-about h3 {
     color: var(--accent-yellow);
     margin-bottom: 20px;
 }
 
-.education-list {
-    margin-top: 20px;
+.horizontal-list {
+    display: flex;
+    justify-content: center;
+    gap: 30px;
+    flex-wrap: wrap;
+    margin-top: 30px;
     list-style: none;
 }
 
-.education-list li {
-    margin-bottom: 10px;
+.horizontal-list li {
+    font-size: 1rem;
 }
 
 /* =============================
-   Skills with Proficiency Bars
+   Skills (New Grid Layout)
 ============================= */
-.skill-bars {
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    gap: 25px;
+    margin-top: 40px;
+}
+
+.skill-card {
+    background: var(--card-bg);
+    border: 1px solid rgba(168, 85, 247, 0.2);
+    border-radius: 15px;
+    padding: 30px 15px;
     display: flex;
     flex-direction: column;
-    gap: 20px;
-    width: 100%;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
 }
 
-.skill-item { width: 100%; }
+.skill-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(168, 85, 247, 0.15);
+    border-color: rgba(168, 85, 247, 0.5);
+}
 
-.skill-info {
-    display: flex;
-    justify-content: space-between;
-    margin-bottom: 8px;
-    font-weight: 500;
+.skill-card i {
+    font-size: 4.5rem; 
+    margin-bottom: 20px;
+}
+
+.skill-card span {
+    color: var(--text-light);
     font-size: 0.95rem;
-}
-
-.skill-info i {
-    color: var(--accent-yellow);
-    margin-right: 8px;
-    width: 20px;
+    font-weight: 600;
     text-align: center;
-}
-
-.progress-line {
-    width: 100%;
-    height: 10px;
-    background: rgba(168, 85, 247, 0.2);
-    border-radius: 10px;
-    position: relative;
-    overflow: hidden;
-}
-
-.progress-line span {
-    display: block;
-    height: 100%;
-    background: var(--primary-purple);
-    border-radius: 10px;
-    width: 0%; 
-    transition: width 1.5s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 .skill-tags {
@@ -585,9 +591,7 @@ section {
     transition: 0.3s;
 }
 
-.linkedin-tag:hover {
-    background: #005582;
-}
+.linkedin-tag:hover { background: #005582; }
 
 .medium-tag {
     display: inline-flex;
@@ -604,9 +608,7 @@ section {
     transition: 0.3s;
 }
 
-.medium-tag:hover {
-    background: #333;
-}
+.medium-tag:hover { background: #333; }
 
 /* =============================
    Modal & Slideshow
@@ -732,9 +734,7 @@ section {
     transition: background-color 0.6s ease;
 }
 
-.active, .dot:hover {
-    background-color: var(--accent-yellow);
-}
+.active, .dot:hover { background-color: var(--accent-yellow); }
 
 .fade {
     animation-name: slideFade;

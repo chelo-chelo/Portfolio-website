@@ -5,7 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Chelaka Botheju | Portfolio</title>
     <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <!-- Devicon for colorful tech logos -->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
 </head>
 <body>
 
@@ -25,6 +28,7 @@
         <ul class="nav-links">
             <li><a href="#home" class="nav-link scroll-link" data-target="main-view">Home</a></li>
             <li><a href="#about" class="nav-link scroll-link" data-target="main-view">About</a></li>
+            <li><a href="#skills" class="nav-link scroll-link" data-target="main-view">Skills</a></li>
             <li><a href="#projects" class="nav-link scroll-link" data-target="main-view">Projects</a></li>
             <li><a href="#" class="nav-link view-btn" data-target="cert-awards-view">Certs & Awards</a></li>
             <li><a href="#" class="nav-link view-btn" data-target="blogs-view">Blogs</a></li>
@@ -70,77 +74,41 @@
         <!-- About -->
         <section id="about" class="fade-in">
             <h2 class="section-title">About Me</h2>
-            <div class="about-content">
+            <div class="centered-about">
                 <div class="about-text">
                     <h3>Personal Information</h3>
                     <p>I am a BSc ICT undergraduate at University of Sri Jayewardenepura with interests in software development and creative design.</p>
-                    <ul class="education-list">
+                    <ul class="education-list horizontal-list">
                         <li><strong>Location:</strong> Colombo, Sri Lanka</li>
                         <li><strong>Email:</strong> chelakabotheju@gmail.com</li>
                         <li><strong>Phone:</strong> 0760497677</li>
                     </ul>
                 </div>
-                <div class="skills-container">
-                    <h3>Skills</h3>
-                    <div class="skill-bars">
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span><i class="fa-brands fa-html5"></i> HTML / CSS</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="progress-line" data-percent="90%"><span></span></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span><i class="fa-brands fa-js"></i> JavaScript</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="progress-line" data-percent="80%"><span></span></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span><i class="fa-brands fa-java"></i> Java</span>
-                                <span>75%</span>
-                            </div>
-                            <div class="progress-line" data-percent="75%"><span></span></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span><i class="fa-brands fa-python"></i> Python</span>
-                                <span>70%</span>
-                            </div>
-                            <div class="progress-line" data-percent="70%"><span></span></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span><i class="fa-solid fa-database"></i> SQL</span>
-                                <span>80%</span>
-                            </div>
-                            <div class="progress-line" data-percent="80%"><span></span></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span><i class="fa-brands fa-git-alt"></i> Git</span>
-                                <span>85%</span>
-                            </div>
-                            <div class="progress-line" data-percent="85%"><span></span></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span><i class="fa-brands fa-figma"></i> Figma</span>
-                                <span>90%</span>
-                            </div>
-                            <div class="progress-line" data-percent="90%"><span></span></div>
-                        </div>
-                        <div class="skill-item">
-                            <div class="skill-info">
-                                <span><i class="fa-solid fa-pen-ruler"></i> Photoshop</span>
-                                <span>95%</span>
-                            </div>
-                            <div class="progress-line" data-percent="95%"><span></span></div>
-                        </div>
-                    </div>
-                </div>
+            </div>
+        </section>
+
+        <!-- Skills -->
+        <section id="skills" class="fade-in">
+            <h2 class="section-title">My Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-card"><i class="devicon-html5-plain colored"></i><span>HTML</span></div>
+                <div class="skill-card"><i class="devicon-css3-plain colored"></i><span>CSS</span></div>
+                <div class="skill-card"><i class="devicon-javascript-plain colored"></i><span>JavaScript</span></div>
+                <div class="skill-card"><i class="devicon-python-plain colored"></i><span>Python</span></div>
+                <div class="skill-card"><i class="devicon-java-plain colored"></i><span>Java</span></div>
+                <div class="skill-card"><i class="devicon-mysql-plain colored"></i><span>MySQL</span></div>
+                <div class="skill-card"><i class="devicon-amazonwebservices-plain-wordmark colored"></i><span>AWS</span></div>
+                <div class="skill-card"><i class="devicon-matlab-plain colored"></i><span>MATLAB</span></div>
+                
+                <div class="skill-card"><i class="fa-solid fa-microchip" style="color: #4ade80;"></i><span>Proteus</span></div>
+                <div class="skill-card"><i class="devicon-git-plain colored"></i><span>Git</span></div>
+                <div class="skill-card"><i class="fa-brands fa-github" style="color: var(--text-light);"></i><span>GitHub</span></div>
+                <div class="skill-card"><i class="devicon-docker-plain colored"></i><span>Docker</span></div>
+                
+                <div class="skill-card"><i class="devicon-photoshop-plain colored"></i><span>Adobe Photoshop</span></div>
+                <div class="skill-card"><i class="devicon-illustrator-plain colored"></i><span>Adobe Illustrator</span></div>
+                <div class="skill-card"><i class="fa-brands fa-adobe" style="color: #ff3366;"></i><span>Adobe InDesign</span></div>
+                <div class="skill-card"><i class="devicon-figma-plain colored"></i><span>Figma</span></div>
             </div>
         </section>
 

@@ -52,8 +52,8 @@ function updateActiveNavLink() {
             }
         });
     } else if (activeView && activeView.id === 'main-view') {
-        // We are on the main scrollable page
-        const sections = ['home', 'about', 'projects'];
+        // We are on the main scrollable page - Included "skills"
+        const sections = ['home', 'about', 'skills', 'projects'];
         let currentSectionId = 'home'; // default
         
         for (let id of sections) {
@@ -139,24 +139,6 @@ if(themeBtn) {
         document.body.classList.toggle("light-theme");
     });
 }
-
-// =============================
-// Skills Proficiency Animation
-// =============================
-const progressLines = document.querySelectorAll(".progress-line span");
-const skillsObserver = new IntersectionObserver((entries) => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
-            const line = entry.target;
-            const percent = line.parentElement.getAttribute("data-percent");
-            line.style.width = percent;
-        }
-    });
-}, { threshold: 0.5 }); 
-
-progressLines.forEach(line => {
-    skillsObserver.observe(line);
-});
 
 // =============================
 // Project Slideshow Modal
