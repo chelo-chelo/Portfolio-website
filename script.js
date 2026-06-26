@@ -310,43 +310,57 @@ function showSlides(n) {
 // =============================
 // EmailJS Contact Form
 // =============================
+
+// Initialize EmailJS
+emailjs.init("_8t8FDbj3nwn4V57L");
+
 const contactForm = document.getElementById("contact-form");
 const submitBtn = document.getElementById("submit-btn");
 const formStatus = document.getElementById("form-status");
 
-if(contactForm) {
-    // IMPORTANT: Make sure to initialize EmailJS with your Public Key in a <script> tag in HTML
-    // emailjs.init("YOUR_PUBLIC_KEY");
-    
-    contactForm.addEventListener("submit", function(e) {
-        e.preventDefault();
-        
-        submitBtn.innerHTML = "Sending...";
-        submitBtn.disabled = true;
-        
-        // Replace with your actual Service ID and Template ID
-        const serviceID = "YOUR_SERVICE_ID"; 
-        const templateID = "YOUR_TEMPLATE_ID";
+if(contactForm){
 
-        emailjs.sendForm(serviceID, templateID, this)
-            .then(() => {
-                formStatus.style.color = "#4ade80"; // Green color
-                formStatus.innerText = "Message sent successfully!";
-                contactForm.reset();
-                submitBtn.innerHTML = "Send Message";
-                submitBtn.disabled = false;
-                
-                setTimeout(() => {
-                    formStatus.innerText = "";
-                }, 5000);
-            }, (err) => {
-                formStatus.style.color = "#f87171"; // Red color
-                formStatus.innerText = "Failed to send message. Please try again.";
-                console.error("EmailJS Error:", err);
-                submitBtn.innerHTML = "Send Message";
-                submitBtn.disabled = false;
-            });
+    contactForm.addEventListener("submit", function(e){
+
+        e.preventDefault();
+
+        submitBtn.innerHTML="Sending...";
+        submitBtn.disabled=true;
+
+        emailjs.sendForm(
+            "service_ord3caa",
+            "template_sh8kuva",
+            this
+        )
+        .then(() => {
+
+            formStatus.style.color="#4ade80";
+            formStatus.innerText="Message sent successfully ✓";
+
+            contactForm.reset();
+
+            submitBtn.innerHTML="Send Message";
+            submitBtn.disabled=false;
+
+            setTimeout(()=>{
+                formStatus.innerText="";
+            },5000);
+
+        })
+
+        .catch((error)=>{
+
+            console.log(error);
+
+            formStatus.style.color="#f87171";
+            formStatus.innerText="Failed to send message";
+
+            submitBtn.innerHTML="Send Message";
+            submitBtn.disabled=false;
+        });
+
     });
+
 }
 // =============================
 // Visitor Counter & Animation
